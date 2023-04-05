@@ -1,4 +1,4 @@
 // src/lib/index.ts
 import Card from './components/Card.svelte';
-
-export { Card };
+import Card2 from './components/Card.svelte';
+export { Card, Card2 };
