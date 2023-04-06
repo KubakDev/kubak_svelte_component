@@ -1,7 +1,7 @@
-/** @typedef {typeof __propDef.props}  MainCardProps */
-/** @typedef {typeof __propDef.events}  MainCardEvents */
-/** @typedef {typeof __propDef.slots}  MainCardSlots */
-export default class MainCard extends SvelteComponentTyped<{
+/** @typedef {typeof __propDef.props}  HorizontalCardProps */
+/** @typedef {typeof __propDef.events}  HorizontalCardEvents */
+/** @typedef {typeof __propDef.slots}  HorizontalCardSlots */
+export default class HorizontalCard extends SvelteComponentTyped<{
     data?: {
         title: string;
         description: string;
@@ -11,9 +11,9 @@ export default class MainCard extends SvelteComponentTyped<{
     [evt: string]: CustomEvent<any>;
 }, {}> {
 }
-export type MainCardProps = typeof __propDef.props;
-export type MainCardEvents = typeof __propDef.events;
-export type MainCardSlots = typeof __propDef.slots;
+export type HorizontalCardProps = typeof __propDef.props;
+export type HorizontalCardEvents = typeof __propDef.events;
+export type HorizontalCardSlots = typeof __propDef.slots;
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {

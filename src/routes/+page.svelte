@@ -1,10 +1,14 @@
 <script lang="ts">
-	import Card from '../lib/components/Card.svelte';
+	import MainCard from '$lib/components/cards/MainCard.svelte';
+	import HorizontalCard from '$lib/components/cards/HorizontalCard.svelte';
 	// import '../lib/style.scss';
+	let cardData = {
+		title: 'The Story',
+		description:
+			'Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here, content, makinlook like readable English. Many desktop publishing packages.',
+		date: '16 Nov 2023'
+	};
 </script>
 
-<Card />
-<h1>Welcome to your library project</h1>
-
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<MainCard data={cardData} />
+<HorizontalCard data={cardData} />
