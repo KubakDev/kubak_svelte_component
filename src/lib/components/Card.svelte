@@ -1,26 +1,23 @@
-<script lang="ts">
-	export let title: string = '';
-	export let content: string = '';
+<script>
+	import { Card, Button, Toggle } from 'flowbite-svelte';
+	let vCard = false;
 </script>
 
-<div class="card">
-	<div class="title">{title}</div>
-	<div class="content">{content}</div>
+<div>
+	<Card
+		img="https://www.sulyexpo.com/Img/Reklam/1512202193610Ku-1.jpg"
+		reverse={vCard}
+		class="rounded-3xl"
+	>
+		<div class="flex justify-between items-center">
+			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+				The Story
+			</h5>
+			<p>16 Nov 2023</p>
+		</div>
+		<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 leading-tight">
+			Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+			'Content here, content, makinlook like readable English. Many desktop publishing packages.
+		</p>
+	</Card>
 </div>
-
-<style>
-	.card {
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		padding: 1rem;
-		margin: 1rem;
-	}
-	.title {
-		font-size: 1.5rem;
-		font-weight: bold;
-		margin-bottom: 0.5rem;
-	}
-	.content {
-		font-size: 1rem;
-	}
-</style>

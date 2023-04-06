@@ -1,3 +1,9 @@
+<script lang="ts">
+	import Card from '../lib/components/Card.svelte';
+	// import '../lib/style.scss';
+</script>
+
+<Card />
 <h1>Welcome to your library project</h1>
 
 <p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
