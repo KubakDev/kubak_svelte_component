@@ -2,7 +2,7 @@
 	"name": "kubak-svelte-component",
 	"version": "0.0.13",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --port 5175",
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",

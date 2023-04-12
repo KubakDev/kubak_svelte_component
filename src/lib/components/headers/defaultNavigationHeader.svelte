@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from 'flowbite-svelte';
 	import { goto } from '$app/navigation';
-	import BsFacebook from 'svelte-icons-pack/bs/BsFacebook';
-	import BsInstagram from 'svelte-icons-pack/bs/BsInstagram';
-	import BsTwitter from 'svelte-icons-pack/bs/BsTwitter';
+	// import BsFacebook from 'svelte-icons-pack/bs/BsFacebook';
+	// import BsInstagram from 'svelte-icons-pack/bs/BsInstagram';
+	// import BsTwitter from 'svelte-icons-pack/bs/BsTwitter';
 	import { Select } from 'flowbite-svelte';
-	import Icon from 'svelte-icons-pack';
+	// import Icon from 'svelte-icons-pack';
 
 	let activeUrl: string;
 	let pages = [
@@ -61,9 +61,9 @@
 		{/each}
 	</NavUl>
 	<div class="text-white flex justify-around w-56 items-center cursor-pointer">
-		<Icon src={BsInstagram} size="1.2rem" />
+		<!-- <Icon src={BsInstagram} size="1.2rem" />
 		<Icon src={BsFacebook} size="1.2rem" />
-		<Icon src={BsTwitter} size="1.2rem" />
+		<Icon src={BsTwitter} size="1.2rem" /> -->
 		<div class="w-20">
 			<Select
 				class="mt-2 rounded-2xl h-10 bg-[#e1b168] border-none"
