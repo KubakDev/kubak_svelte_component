@@ -1,8 +1,6 @@
 <script>import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from "flowbite-svelte";
 import { goto } from "$app/navigation";
-import BsTwitter from "svelte-icons-pack/bs/BsTwitter";
 import { Select } from "flowbite-svelte";
-import Icon from "svelte-icons-pack";
 let activeUrl;
 let pages = [
   {
@@ -57,9 +55,6 @@ let countries = [
 		{/each}
 	</NavUl>
 	<div class="text-black flex justify-around w-56 items-center cursor-pointer">
-		<!-- <!-- <Icon src={BsInstagram} size="1.2rem" /> -->
-		<!-- <Icon src={BsFacebook} size="1.2rem" /> -->
-		<Icon src={BsTwitter} size="1.2rem" />
 		<div class="w-20">
 			<Select
 				class="mt-2 rounded-2xl h-10 bg-[#e1b168] border-none"
