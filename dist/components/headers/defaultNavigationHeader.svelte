@@ -1,6 +1,8 @@
 <script>import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from "flowbite-svelte";
 import { goto } from "$app/navigation";
+import BsTwitter from "svelte-icons-pack/bs/BsTwitter";
 import { Select } from "flowbite-svelte";
+import Icon from "svelte-icons-pack";
 let activeUrl;
 let pages = [
   {
@@ -40,7 +42,7 @@ let countries = [
 ];
 </script>
 
-<Navbar let:hidden let:toggle navClass="bg-[#292e36] py-3">
+<Navbar let:hidden let:toggle navClass="py-3">
 	<NavHamburger on:click={toggle} />
 
 	<NavUl {hidden}>
@@ -48,16 +50,16 @@ let countries = [
 			<div
 				class="p-2 cursor-pointer {activeUrl == page.url ? 'border-y-2  border-[#e1b168] ' : ''}"
 			>
-				<h1 class="text-white">
+				<h1 class="text-black">
 					{page.title}
 				</h1>
 			</div>
 		{/each}
 	</NavUl>
-	<div class="text-white flex justify-around w-56 items-center cursor-pointer">
-		<!-- <Icon src={BsInstagram} size="1.2rem" />
-		<Icon src={BsFacebook} size="1.2rem" />
-		<Icon src={BsTwitter} size="1.2rem" /> -->
+	<div class="text-black flex justify-around w-56 items-center cursor-pointer">
+		<!-- <!-- <Icon src={BsInstagram} size="1.2rem" /> -->
+		<!-- <Icon src={BsFacebook} size="1.2rem" /> -->
+		<Icon src={BsTwitter} size="1.2rem" />
 		<div class="w-20">
 			<Select
 				class="mt-2 rounded-2xl h-10 bg-[#e1b168] border-none"
