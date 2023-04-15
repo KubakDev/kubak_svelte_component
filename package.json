@@ -2,7 +2,7 @@
 	"name": "kubak-svelte-component",
 	"version": "0.0.13",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --port 5175",
 		"build": "vite build && npm run package",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",
@@ -55,7 +55,6 @@
 		"classnames": "^2.3.2",
 		"flowbite": "^1.6.4",
 		"flowbite-svelte": "^0.34.7",
-		"ionicons": "^7.1.0",
-		"svelte-icons-pack": "^2.1.0"
+		"ionicons": "^7.1.0"
 	}
 }

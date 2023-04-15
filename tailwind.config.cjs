@@ -5,7 +5,11 @@ const config = {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      container: {
+        padding: '1rem',
+      }
+    },
   },
 
   plugins: [
