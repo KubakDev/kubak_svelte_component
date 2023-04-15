@@ -1,5 +1,4 @@
 <script>import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from "flowbite-svelte";
-import { goto } from "$app/navigation";
 import BsTwitter from "svelte-icons-pack/bs/BsTwitter";
 import { Select } from "flowbite-svelte";
 import Icon from "svelte-icons-pack";

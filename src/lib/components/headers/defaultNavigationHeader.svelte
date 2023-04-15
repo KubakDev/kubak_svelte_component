@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from 'flowbite-svelte';
-	import { goto } from '$app/navigation';
 	// import BsFacebook from 'svelte-icons-pack/bs/BsFacebook';
 	// import BsInstagram from 'svelte-icons-pack/bs/BsInstagram';
 	import BsTwitter from 'svelte-icons-pack/bs/BsTwitter';
