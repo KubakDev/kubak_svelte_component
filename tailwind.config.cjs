@@ -5,6 +5,9 @@ const config = {
   ],
 
   theme: {
+    colors: {
+      'test': "#292e36"
+    },
     extend: {
       container: {
         padding: '1rem',

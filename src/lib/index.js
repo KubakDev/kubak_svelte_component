@@ -5,4 +5,5 @@ import DefaultNavigationHeader from "./components/headers/defaultNavigationHeade
 import DefaultSectionHeader from "./components/headers/defaultSectionHeader.svelte";
 import SimpleCard from "./components/cards/SimpleCard.svelte";
 import FlatCard from "./components/cards/FlatCard.svelte";
-export { MainCard, DefaultNavigationHeader, DefaultSectionHeader, SimpleCard, FlatCard };
+import NewsDetail from "./pages/newsDetail.svelte"
+export { MainCard, DefaultNavigationHeader, DefaultSectionHeader, SimpleCard, FlatCard, NewsDetail };

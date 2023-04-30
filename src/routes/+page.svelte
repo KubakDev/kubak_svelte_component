@@ -1,9 +1,5 @@
 <script lang="ts">
-	import MainCard from '$lib/components/cards/MainCard.svelte';
-	import Headers from '$lib/components/headers/defaultNavigationHeader.svelte';
-	import DefaultSectionHeader from '$lib/components/headers/defaultSectionHeader.svelte';
-	import SimpleCard from '$lib/components/cards/SimpleCard.svelte';
-	import FlatCard from '$lib/components/cards/FlatCard.svelte';
+	import NewsDetail from '$lib/pages/newsDetail.svelte';
 	let cardData = {
 		title: 'The Story',
 		description:
@@ -18,10 +14,6 @@
 	};
 </script>
 
-<div class="flex justify-center mt-10">
-	<!-- <Headers />
-	<MainCard data={cardData} />
-	<HorizontalCard data={cardData} />
-	<DefaultSectionHeader title="NEWS" /> -->
-	<!-- <FlatCard data={cardData2} /> -->
+<div class="">
+	<NewsDetail />
 </div>
