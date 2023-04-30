@@ -1,43 +1,44 @@
-<script>import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from "flowbite-svelte";
-import { goto } from "$app/navigation";
-import { Select } from "flowbite-svelte";
-let activeUrl;
-let pages = [
-  {
-    title: "HOME",
-    url: "/home"
-  },
-  {
-    title: "NEWS",
-    url: "/news"
-  },
-  {
-    title: "EXHIBITION",
-    url: "/exhibition"
-  },
-  {
-    title: "MEDIA",
-    url: "/media"
-  },
-  {
-    title: "ARCHIVE",
-    url: "/archive"
-  },
-  {
-    title: "SERVICES",
-    url: "/services"
-  },
-  {
-    title: "ABOUT US",
-    url: "/about-us"
-  }
-];
-let selected;
-let countries = [
-  { value: "en", name: "En" },
-  { value: "ku", name: "Ku" },
-  { value: "ar", name: "Ar" }
-];
+<script>
+	import { Navbar, NavBrand, NavLi, NavUl, NavHamburger, Button, Input } from 'flowbite-svelte';
+	import { goto } from '$app/navigation';
+	import { Select } from 'flowbite-svelte';
+	let activeUrl;
+	let pages = [
+		{
+			title: 'HOME',
+			url: '/home'
+		},
+		{
+			title: 'NEWS',
+			url: '/news'
+		},
+		{
+			title: 'EXHIBITION',
+			url: '/exhibition'
+		},
+		{
+			title: 'MEDIA',
+			url: '/media'
+		},
+		{
+			title: 'ARCHIVE',
+			url: '/archive'
+		},
+		{
+			title: 'SERVICES',
+			url: '/services'
+		},
+		{
+			title: 'ABOUT US',
+			url: '/about-us'
+		}
+	];
+	let selected;
+	let countries = [
+		{ value: 'en', name: 'En' },
+		{ value: 'ku', name: 'Ku' },
+		{ value: 'ar', name: 'Ar' }
+	];
 </script>
 
 <Navbar let:hidden let:toggle navClass="py-3">
