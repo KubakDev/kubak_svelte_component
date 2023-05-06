@@ -6,6 +6,8 @@ export default class SimpleCard extends SvelteComponentTyped<{
         title: string;
         img: string;
         date: string;
+        thumbnail: string;
+        created_at: number;
     } | undefined;
     colors?: {
         onPrimaryColor: string;
@@ -29,6 +31,8 @@ declare const __propDef: {
             title: string;
             img: string;
             date: string;
+            thumbnail: string;
+            created_at: number;
         } | undefined;
         colors?: {
             onPrimaryColor: string;

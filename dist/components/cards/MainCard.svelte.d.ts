@@ -4,8 +4,19 @@
 export default class MainCard extends SvelteComponentTyped<{
     data?: {
         title: string;
-        description: string;
+        img: string;
         date: string;
+        thumbnail: string;
+        created_at: number;
+        short_description: string;
+    } | undefined;
+    colors?: {
+        onPrimaryColor: string;
+        onSecondaryColor: string;
+        primaryColor: string;
+        secondaryColor: string;
+        backgroundColor: string;
+        onBackgroundColor: string;
     } | undefined;
 }, {
     [evt: string]: CustomEvent<any>;
@@ -19,8 +30,19 @@ declare const __propDef: {
     props: {
         data?: {
             title: string;
-            description: string;
+            img: string;
             date: string;
+            thumbnail: string;
+            created_at: number;
+            short_description: string;
+        } | undefined;
+        colors?: {
+            onPrimaryColor: string;
+            onSecondaryColor: string;
+            primaryColor: string;
+            secondaryColor: string;
+            backgroundColor: string;
+            onBackgroundColor: string;
         } | undefined;
     };
     events: {

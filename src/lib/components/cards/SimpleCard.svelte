@@ -1,8 +1,12 @@
 <script>
+	import moment from 'moment';
+
 	export let data = {
 		title: '',
 		img: '',
-		date: ''
+		date: '',
+		thumbnail: '',
+		created_at: Date.now()
 	};
 	export let colors = {
 		onPrimaryColor: '',
@@ -18,13 +22,23 @@
 	class="simpleCard w-full max-w-[600px] rounded-3xl"
 	style={`background-color: ${colors.primaryColor};`}
 >
-	<img src={data.img} alt="" class="w-full object-cover rounded-3xl" style="height: 352px;" />
+	<img
+		src={data.thumbnail
+			? `${import.meta.env.VITE_PUBLIC_SUPABASE_STORAGE_URL}/${data.thumbnail}`
+			: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
+		alt=""
+		class="w-full object-cover rounded-3xl"
+		style="height: 300px;"
+	/>
 	<div
 		class=" flex justify-between px-8 items-center py-3"
 		style={`color: ${colors.onPrimaryColor};`}
 	>
 		<h1 class="text-2xl font-bold">{data.title}</h1>
-		<p>{data.date}</p>
+		<!-- format created_at date for only month -->
+		<p style={`color: ${colors.onPrimaryColor};`}>
+			{moment(data.created_at).format('DD MMMM YYYY')}
+		</p>
 	</div>
 </div>
 
