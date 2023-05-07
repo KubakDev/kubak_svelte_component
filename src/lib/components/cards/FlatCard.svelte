@@ -1,30 +1,44 @@
-<script lang="ts">
-	export let data: {
-		title: string;
-		img?: string;
-		date: string;
-		description: string;
-	} = {
+<script>
+	import moment from 'moment';
+	export let data = {
 		title: '',
 		img: '',
-		date: '',
-		description: ''
+		thumbnail: '',
+		created_at: Date.now(),
+		short_description: ''
+	};
+	export let colors = {
+		onPrimaryColor: '',
+		onSecondaryColor: '',
+		primaryColor: '',
+		secondaryColor: '',
+		backgroundColor: '',
+		onBackgroundColor: ''
 	};
 </script>
 
-<div class="bg-test flex flex-col items-center w-full max-w-[600px]">
+<div
+	class=" flex flex-col items-center w-full max-w-[600px] h-[500px]"
+	style={`background-color: ${colors.primaryColor};`}
+>
 	<img
-		src="https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510__340.jpg"
+		src={data.thumbnail
+			? `${import.meta.env.VITE_PUBLIC_SUPABASE_STORAGE_URL}/${data.thumbnail}`
+			: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 		alt=""
-		class="h-[350px] w-full object-cover"
+		class="h-[300px] w-full object-cover"
 	/>
-	<div class="h-[200px] flex flex-col justify-end px-8">
-		<div class="text-white">
-			<h1 class="text-3xl font-bold pb-3">{data.title}</h1>
+	<div class="h-[200px] flex flex-col justify-end px-8 py-5">
+		<div>
+			<h1 class="text-3xl font-bold pb-3" style={`color: ${colors.onPrimaryColor};`}>
+				{data.title}
+			</h1>
 
-			<p>{data.description}</p>
+			<p style={`color: ${colors.onPrimaryColor};`}>{data.short_description}</p>
 		</div>
 	</div>
 
-	<p class="text-[#cbcbcb] text-end w-full p-10">{data.date}</p>
+	<p class="text-end w-full p-10" style={`color: ${colors.onPrimaryColor};`}>
+		{moment(data.created_at).format('DD MMMM YYYY')}
+	</p>
 </div>
