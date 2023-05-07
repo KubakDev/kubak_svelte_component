@@ -9,6 +9,7 @@ export default class MainCard extends SvelteComponentTyped<{
         thumbnail: string;
         created_at: number;
         short_description: string;
+        imgSource: ImgSourceEnum;
     } | undefined;
     colors?: {
         onPrimaryColor: string;
@@ -25,6 +26,7 @@ export default class MainCard extends SvelteComponentTyped<{
 export type MainCardProps = typeof __propDef.props;
 export type MainCardEvents = typeof __propDef.events;
 export type MainCardSlots = typeof __propDef.slots;
+import { ImgSourceEnum } from '../models/imgSourceEnum';
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
@@ -35,6 +37,7 @@ declare const __propDef: {
             thumbnail: string;
             created_at: number;
             short_description: string;
+            imgSource: ImgSourceEnum;
         } | undefined;
         colors?: {
             onPrimaryColor: string;
