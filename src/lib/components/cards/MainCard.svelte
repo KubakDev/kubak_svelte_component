@@ -1,5 +1,6 @@
 <script>
 	import moment from 'moment';
+	import { ImgSourceEnum } from '../models/imgSourceEnum';
 
 	export let data = {
 		title: '',
@@ -7,7 +8,8 @@
 		date: '',
 		thumbnail: '',
 		created_at: Date.now(),
-		short_description: ''
+		short_description: '',
+		imgSource: ImgSourceEnum.remote
 	};
 	export let colors = {
 		onPrimaryColor: '',
@@ -25,7 +27,9 @@
 >
 	<img
 		src={data.thumbnail
-			? `${import.meta.env.VITE_PUBLIC_SUPABASE_STORAGE_URL}/${data.thumbnail}`
+			? data.imgSource === ImgSourceEnum.remote
+				? `${import.meta.env.VITE_PUBLIC_SUPABASE_STORAGE_URL}/${data.thumbnail}`
+				: data.thumbnail
 			: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 		alt=""
 		class="w-full object-cover rounded-3xl"

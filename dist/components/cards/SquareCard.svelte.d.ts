@@ -2,7 +2,22 @@
 /** @typedef {typeof __propDef.events}  SquareCardEvents */
 /** @typedef {typeof __propDef.slots}  SquareCardSlots */
 export default class SquareCard extends SvelteComponentTyped<{
-    [x: string]: never;
+    data?: {
+        title: string;
+        img: string;
+        thumbnail: string;
+        created_at: number;
+        short_description: string;
+        imgSource: ImgSourceEnum;
+    } | undefined;
+    colors?: {
+        onPrimaryColor: string;
+        onSecondaryColor: string;
+        primaryColor: string;
+        secondaryColor: string;
+        backgroundColor: string;
+        onBackgroundColor: string;
+    } | undefined;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {}> {
@@ -10,10 +25,26 @@ export default class SquareCard extends SvelteComponentTyped<{
 export type SquareCardProps = typeof __propDef.props;
 export type SquareCardEvents = typeof __propDef.events;
 export type SquareCardSlots = typeof __propDef.slots;
+import { ImgSourceEnum } from '../models/imgSourceEnum';
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
-        [x: string]: never;
+        data?: {
+            title: string;
+            img: string;
+            thumbnail: string;
+            created_at: number;
+            short_description: string;
+            imgSource: ImgSourceEnum;
+        } | undefined;
+        colors?: {
+            onPrimaryColor: string;
+            onSecondaryColor: string;
+            primaryColor: string;
+            secondaryColor: string;
+            backgroundColor: string;
+            onBackgroundColor: string;
+        } | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;

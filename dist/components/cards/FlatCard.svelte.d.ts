@@ -8,6 +8,7 @@ export default class FlatCard extends SvelteComponentTyped<{
         thumbnail: string;
         created_at: number;
         short_description: string;
+        imgSource: ImgSourceEnum;
     } | undefined;
     colors?: {
         onPrimaryColor: string;
@@ -24,6 +25,7 @@ export default class FlatCard extends SvelteComponentTyped<{
 export type FlatCardProps = typeof __propDef.props;
 export type FlatCardEvents = typeof __propDef.events;
 export type FlatCardSlots = typeof __propDef.slots;
+import { ImgSourceEnum } from '../models/imgSourceEnum';
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
@@ -33,6 +35,7 @@ declare const __propDef: {
             thumbnail: string;
             created_at: number;
             short_description: string;
+            imgSource: ImgSourceEnum;
         } | undefined;
         colors?: {
             onPrimaryColor: string;
