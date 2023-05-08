@@ -64,13 +64,13 @@
 </script>
 
 <div class="w-full min-h-screen bg-[#292e36] flex flex-col items-center text-white">
-	<div class="">
+	<div class="w-full">
 		{#if data.images.length > 1}
-			<Carousel images={data.images} showCaptions={false} divClass="bg-red-400" />
+			<Carousel images={data.images} showCaptions={false} divClass="bg-red-400 overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96 w-full" />
 		{/if}
 	</div>
 	<div class=" flex flex-col items-center">
-		<h2 class="my-5 text-2xl font-bold">{data.title}</h2>
+		<h2 class="my-5 text-2xl font-bold bg-red-700">{data.title}</h2>
 		<p class="text-xl text-white">
 			{data.description}
 		</p>
