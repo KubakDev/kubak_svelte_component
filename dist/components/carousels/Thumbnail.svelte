@@ -7,6 +7,7 @@ export let selected = false;
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
+
 <img
 	class="opacity-40 w-32 object-cover rounded-md mx-2 image-con"
 	class:active={selected}
