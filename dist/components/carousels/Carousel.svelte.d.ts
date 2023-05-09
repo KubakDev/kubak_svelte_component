@@ -4,7 +4,7 @@ declare const __propDef: {
         showIndicators?: boolean | undefined;
         showCaptions?: boolean | undefined;
         showThumbs?: boolean | undefined;
-        images: any[];
+        images: any;
         slideControls?: boolean | undefined;
         loop?: boolean | undefined;
         duration?: number | undefined;

@@ -44,9 +44,8 @@
 
 <div id="default-carousel" class="relative">
 	<h1>Hi Bnar</h1>
-	<div class={divClass}>
+	<div class={divClass + ' h-screen-1/4 sm:h-screen-1/3'} style="height:30vh">
 		<Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
-
 		<!-- <img src={image.imgurl} alt="df" title="df" class="object-fill" /> -->
 	</div>
 	{#if showIndicators}

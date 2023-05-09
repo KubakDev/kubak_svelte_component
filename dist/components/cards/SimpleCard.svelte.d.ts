@@ -8,7 +8,14 @@ export default class SimpleCard extends SvelteComponentTyped<{
         created_at: number;
         imgSource: ImgSourceEnum;
     } | undefined;
-    colors?: ColorTheme | undefined;
+    colors?: {
+        onPrimaryColor: string;
+        onSecondaryColor: string;
+        primaryColor: string;
+        secondaryColor: string;
+        backgroundColor: string;
+        onBackgroundColor: string;
+    } | undefined;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {}> {
@@ -18,7 +25,6 @@ export type SimpleCardEvents = typeof __propDef.events;
 export type SimpleCardSlots = typeof __propDef.slots;
 import { ImgSourceEnum } from '../models/imgSourceEnum';
 import { SvelteComponentTyped } from "svelte";
-import type { ColorTheme } from "../../../../suli_expo_panel/src/models/colorTheme";
 declare const __propDef: {
     props: {
         data?: {
