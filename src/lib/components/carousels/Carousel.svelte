@@ -3,32 +3,22 @@
 	import Thumbnail from './Thumbnail.svelte';
 	import Caption from './Caption.svelte';
 	import Indicator from './Indicator.svelte';
-
-	export let showIndicators: boolean = true;
-	export let showCaptions: boolean = true;
-	export let showThumbs: boolean = true;
-	export let images: any[];
-	export let slideControls: boolean = true;
-	export let loop: boolean = false;
-	export let duration: number = 2000;
-
-	// Carousel
-	export let divClass: string =
+	export let showIndicators = true;
+	export let showCaptions = true;
+	export let showThumbs = true;
+	export let images: any;
+	export let slideControls = true;
+	export let loop = false;
+	export let duration = 2e3;
+	export let divClass =
 		'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96 object-cover';
-	export let indicatorDivClass: string =
-		'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
-	// Caption
-	export let captionClass: string =
+	export let indicatorDivClass = 'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
+	export let captionClass =
 		'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center';
-	// Indicator
-	export let indicatorClass: string =
-		'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
-	// Slide
-	export let slideClass: string = '';
-
-	let imageShowingIndex: number = 0;
+	export let indicatorClass = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
+	export let slideClass = '';
+	let imageShowingIndex = 0;
 	$: image = images[imageShowingIndex];
-
 	const nextSlide = () => {
 		if (imageShowingIndex === images.length - 1) {
 			imageShowingIndex = 0;
@@ -36,7 +26,6 @@
 			imageShowingIndex += 1;
 		}
 	};
-
 	const prevSlide = () => {
 		if (imageShowingIndex === 0) {
 			imageShowingIndex = images.length - 1;
@@ -44,10 +33,8 @@
 			imageShowingIndex -= 1;
 		}
 	};
-
 	const goToSlide = (number: number) => (imageShowingIndex = number);
 	let thumbWidth = 100 / images.length;
-
 	if (loop) {
 		setInterval(() => {
 			nextSlide();
@@ -56,6 +43,7 @@
 </script>
 
 <div id="default-carousel" class="relative">
+	<h1>Hi Bnar</h1>
 	<div class={divClass}>
 		<Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
 
@@ -140,7 +128,7 @@
 </div>
 
 {#if showThumbs}
-	<div class="flex flex-row justify-center bg-gray-100">
+	<div class="flex flex-row justify-center h-20 mt-4 image-container">
 		{#each images as { id, imgurl, name, attribution }}
 			<Thumbnail
 				{thumbWidth}
@@ -154,3 +142,9 @@
 		{/each}
 	</div>
 {/if}
+
+<style>
+	.image-container {
+		overflow-x: scroll;
+	}
+</style>

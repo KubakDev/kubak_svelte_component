@@ -41,6 +41,7 @@ if (loop) {
 </script>
 
 <div id="default-carousel" class="relative">
+	<h1>Hi Bnar</h1>
 	<div class={divClass}>
 		<Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
 
@@ -125,7 +126,7 @@ if (loop) {
 </div>
 
 {#if showThumbs}
-	<div class="flex flex-row justify-center bg-gray-100">
+	<div class="flex flex-row justify-center h-20 mt-4 image-container">
 		{#each images as { id, imgurl, name, attribution }}
 			<Thumbnail
 				{thumbWidth}
@@ -139,3 +140,9 @@ if (loop) {
 		{/each}
 	</div>
 {/if}
+
+<style>
+	.image-container {
+		overflow-x: scroll;
+	}
+</style>

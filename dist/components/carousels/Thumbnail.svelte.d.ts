@@ -5,7 +5,7 @@ declare const __propDef: {
         altTag?: string | undefined;
         titleLink?: string | undefined;
         id: number;
-        thumbWidth: number;
+        thumbWidth: any;
         selected?: boolean | undefined;
     };
     events: {
