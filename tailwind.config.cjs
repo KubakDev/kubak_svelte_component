@@ -3,7 +3,9 @@ const config = {
     "./src/**/*.{html,js,svelte,ts}",
     "./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}",
   ],
-
+  preflight: {
+    heading: false,
+  },
   theme: {
     colors: {
       'test': "#292e36"
