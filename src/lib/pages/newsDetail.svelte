@@ -61,6 +61,7 @@
 		description: '',
 		images: []
 	};
+	console.log('bnar bnar bnar be jaw ');
 </script>
 
 <div class="w-full min-h-screen bg-[#292e36] flex flex-col items-center text-white">
