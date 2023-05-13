@@ -1,6 +1,6 @@
 {
 	"name": "kubak-svelte-component",
-	"version": "0.0.13",
+	"version": "0.0.17",
 	"scripts": {
 		"dev": "vite dev --port 5175",
 		"build": "vite build && npm run package",

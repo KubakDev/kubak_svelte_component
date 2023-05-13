@@ -1,49 +1,61 @@
-<script>import Slide from "./Slide.svelte";
-import Thumbnail from "./Thumbnail.svelte";
-import Caption from "./Caption.svelte";
-import Indicator from "./Indicator.svelte";
-export let showIndicators = true;
-export let showCaptions = true;
-export let showThumbs = true;
-export let images;
-export let slideControls = true;
-export let loop = false;
-export let duration = 2e3;
-export let divClass = "overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96 object-cover";
-export let indicatorDivClass = "flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2";
-export let captionClass = "h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center";
-export let indicatorClass = "w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60";
-export let slideClass = "";
-let imageShowingIndex = 0;
-$:
-  image = images[imageShowingIndex];
-const nextSlide = () => {
-  if (imageShowingIndex === images.length - 1) {
-    imageShowingIndex = 0;
-  } else {
-    imageShowingIndex += 1;
-  }
-};
-const prevSlide = () => {
-  if (imageShowingIndex === 0) {
-    imageShowingIndex = images.length - 1;
-  } else {
-    imageShowingIndex -= 1;
-  }
-};
-const goToSlide = (number) => imageShowingIndex = number;
-let thumbWidth = 100 / images.length;
-if (loop) {
-  setInterval(() => {
-    nextSlide();
-  }, duration);
-}
+<script>
+	// @ts-nocheck
+
+	import Slide from './Slide.svelte';
+	import Thumbnail from './Thumbnail.svelte';
+	import Caption from './Caption.svelte';
+	import Indicator from './Indicator.svelte';
+	import { ImgSourceEnum } from '../models/imgSourceEnum';
+	export let showIndicators = true;
+	export let showCaptions = true;
+	export let showThumbs = true;
+	export let images;
+	export let slideControls = true;
+	export let loop = false;
+	export let duration = 2e3;
+	export let divClass =
+		'overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96 object-cover';
+	export let indicatorDivClass = 'flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2';
+	export let captionClass =
+		'h-10 bg-gray-300 dark:bg-gray-700 dark:text-white p-2 my-2 text-center';
+	export let indicatorClass = 'w-3 h-3 rounded-full bg-gray-100 hover:bg-gray-300 opacity-60';
+	export let slideClass = '';
+	let imageShowingIndex = 0;
+	$: image = images[imageShowingIndex];
+	const nextSlide = () => {
+		if (imageShowingIndex === images.length - 1) {
+			imageShowingIndex = 0;
+		} else {
+			imageShowingIndex += 1;
+		}
+	};
+	console.log(images);
+	const prevSlide = () => {
+		if (imageShowingIndex === 0) {
+			imageShowingIndex = images.length - 1;
+		} else {
+			imageShowingIndex -= 1;
+		}
+	};
+	const goToSlide = (number) => (imageShowingIndex = number);
+	let thumbWidth = 100 / images.length;
+	if (loop) {
+		setInterval(() => {
+			nextSlide();
+		}, duration);
+	}
 </script>
 
 <div id="default-carousel" class="relative">
-	<h1>Hi Bnar</h1>
 	<div class={divClass + ' h-screen-1/4 sm:h-screen-1/3'} style="height:30vh">
-		<Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
+		<Slide
+			image={image.imgSource == ImgSourceEnum.remote
+				? `${import.meta.env.VITE_PUBLIC_SUPABASE_STORAGE_URL}/${image.imgurl}`
+				: image.imgurl}
+			altTag={image.name}
+			attr={image.attribution}
+			{slideClass}
+		/>
 		<!-- <img src={image.imgurl} alt="df" title="df" class="object-fill" /> -->
 	</div>
 	{#if showIndicators}
@@ -123,11 +135,11 @@ if (loop) {
 		</button>
 	{/if}
 </div>
-
 {#if showThumbs}
 	<div class="flex flex-row justify-center h-20 mt-4 image-container">
-		{#each images as { id, imgurl, name, attribution }}
+		{#each images as { id, imgurl, name, attribution, imgSource }}
 			<Thumbnail
+				{imgSource}
 				{thumbWidth}
 				thumbImg={imgurl}
 				altTag={name}
@@ -142,6 +154,29 @@ if (loop) {
 
 <style>
 	.image-container {
-		overflow-x: scroll;
+		overflow-x: auto;
+	}
+
+	.image-container::-webkit-scrollbar {
+		width: 0.5rem;
+		height: 0.5rem;
+	}
+
+	.image-container::-webkit-scrollbar-thumb {
+		background-color: #ccc;
+		border-radius: 0.5rem;
+	}
+
+	.image-container::-webkit-scrollbar-thumb:hover {
+		background-color: #aaa;
+	}
+
+	.image-container::-webkit-scrollbar-track {
+		background-color: #fff;
+		border-radius: 0.5rem;
+	}
+
+	.image-container {
+		padding: 10px 0;
 	}
 </style>

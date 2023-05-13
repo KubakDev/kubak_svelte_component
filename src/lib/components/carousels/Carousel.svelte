@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import Slide from './Slide.svelte';
 	import Thumbnail from './Thumbnail.svelte';
 	import Caption from './Caption.svelte';
@@ -6,7 +6,7 @@
 	export let showIndicators = true;
 	export let showCaptions = true;
 	export let showThumbs = true;
-	export let images: any;
+	export let images;
 	export let slideControls = true;
 	export let loop = false;
 	export let duration = 2e3;
@@ -33,7 +33,7 @@
 			imageShowingIndex -= 1;
 		}
 	};
-	const goToSlide = (number: number) => (imageShowingIndex = number);
+	const goToSlide = (number) => (imageShowingIndex = number);
 	let thumbWidth = 100 / images.length;
 	if (loop) {
 		setInterval(() => {
@@ -142,8 +142,28 @@
 	</div>
 {/if}
 
-<style>
+<style lang="scss">
 	.image-container {
-		overflow-x: scroll;
+		overflow-x: auto;
+	}
+	//design scroll
+	.image-container::-webkit-scrollbar {
+		width: 0.5rem;
+		height: 0.5rem;
+	}
+	.image-container::-webkit-scrollbar-thumb {
+		background-color: #ccc;
+		border-radius: 0.5rem;
+	}
+	//change on hover
+	.image-container::-webkit-scrollbar-thumb:hover {
+		background-color: #aaa;
+	}
+	.image-container::-webkit-scrollbar-track {
+		background-color: #fff;
+		border-radius: 0.5rem;
+	}
+	.image-container {
+		padding: 10px 0;
 	}
 </style>
