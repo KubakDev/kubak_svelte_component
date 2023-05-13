@@ -1,11 +1,8 @@
 <script>
-	// @ts-nocheck
-
 	import Slide from './Slide.svelte';
 	import Thumbnail from './Thumbnail.svelte';
 	import Caption from './Caption.svelte';
 	import Indicator from './Indicator.svelte';
-	import { ImgSourceEnum } from '../models/imgSourceEnum';
 	export let showIndicators = true;
 	export let showCaptions = true;
 	export let showThumbs = true;
@@ -29,7 +26,6 @@
 			imageShowingIndex += 1;
 		}
 	};
-	console.log(images);
 	const prevSlide = () => {
 		if (imageShowingIndex === 0) {
 			imageShowingIndex = images.length - 1;
@@ -47,15 +43,9 @@
 </script>
 
 <div id="default-carousel" class="relative">
+	<h1>Hi Bnar</h1>
 	<div class={divClass + ' h-screen-1/4 sm:h-screen-1/3'} style="height:30vh">
-		<Slide
-			image={image.imgSource == ImgSourceEnum.remote
-				? `${import.meta.env.VITE_PUBLIC_SUPABASE_STORAGE_URL}/${image.imgurl}`
-				: image.imgurl}
-			altTag={image.name}
-			attr={image.attribution}
-			{slideClass}
-		/>
+		<Slide image={image.imgurl} altTag={image.name} attr={image.attribution} {slideClass} />
 		<!-- <img src={image.imgurl} alt="df" title="df" class="object-fill" /> -->
 	</div>
 	{#if showIndicators}
@@ -135,11 +125,11 @@
 		</button>
 	{/if}
 </div>
+
 {#if showThumbs}
 	<div class="flex flex-row justify-center h-20 mt-4 image-container">
-		{#each images as { id, imgurl, name, attribution, imgSource }}
+		{#each images as { id, imgurl, name, attribution }}
 			<Thumbnail
-				{imgSource}
 				{thumbWidth}
 				thumbImg={imgurl}
 				altTag={name}
@@ -152,31 +142,29 @@
 	</div>
 {/if}
 
-<style>
-	.image-container {
-		overflow-x: auto;
-	}
+<style>.image-container {
+  overflow-x: auto;
+}
 
-	.image-container::-webkit-scrollbar {
-		width: 0.5rem;
-		height: 0.5rem;
-	}
+.image-container::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
 
-	.image-container::-webkit-scrollbar-thumb {
-		background-color: #ccc;
-		border-radius: 0.5rem;
-	}
+.image-container::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 0.5rem;
+}
 
-	.image-container::-webkit-scrollbar-thumb:hover {
-		background-color: #aaa;
-	}
+.image-container::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
 
-	.image-container::-webkit-scrollbar-track {
-		background-color: #fff;
-		border-radius: 0.5rem;
-	}
+.image-container::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
 
-	.image-container {
-		padding: 10px 0;
-	}
-</style>
+.image-container {
+  padding: 10px 0;
+}</style>

@@ -1,11 +1,9 @@
-<script>
-	import Carousel from '../components/carousels/Carousel.svelte';
-	export let data = {
-		title: '',
-		long_description: '',
-		images: []
-	};
-	console.log(data.images);
+<script>import Carousel from "../components/carousels/Carousel.svelte";
+export let data = {
+  title: "",
+  long_description: "",
+  images: []
+};
 </script>
 
 <div class="w-full min-h-screen bg-[#292e36] flex flex-col items-center text-white">
