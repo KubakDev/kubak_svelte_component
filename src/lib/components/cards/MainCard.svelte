@@ -26,7 +26,7 @@
 </script>
 
 <div
-	class="simpleCard w-full max-w-[600px] rounded-3xl"
+	class="simpleCard w-full max-w-[600px] rounded-3xl cursor-pointer"
 	style={`background-color: ${colors.primaryColor};`}
 >
 	<img
@@ -57,11 +57,4 @@
 </div>
 
 <style>
-	.simpleCard {
-		border-radius: 1.5rem;
-	}
-	.simpleCard img {
-		border-top-right-radius: 1.5rem;
-		border-top-left-radius: 1.5rem;
-	}
 </style>
