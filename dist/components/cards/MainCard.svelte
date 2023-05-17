@@ -22,19 +22,21 @@
 </script>
 
 <div
-	class="simpleCard w-full max-w-[600px] rounded-3xl"
+	class="simpleCard w-full max-w-[600px] rounded-3xl cursor-pointer"
 	style={`background-color: ${colors.primaryColor};`}
 >
-	<img
-		src={data.thumbnail
-			? data.imgSource === ImgSourceEnum.remote
-				? `${import.meta.env.VITE_PUBLIC_SUPABASE_STORAGE_URL}/${data.thumbnail}`
-				: data.thumbnail
-			: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
-		alt=""
-		class="w-full object-cover rounded-3xl"
-		style="height: 300px;"
-	/>
+	<div class=" overflow-hidden rounded-tl-3xl rounded-tr-3xl" style="height: 300px;">
+		<img
+			src={data.thumbnail
+				? data.imgSource === ImgSourceEnum.remote
+					? `${import.meta.env.VITE_PUBLIC_SUPABASE_STORAGE_URL}/${data.thumbnail}`
+					: data.thumbnail
+				: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
+			alt=""
+			class="w-full object-cover hover:scale-110 duration-300"
+		/>
+	</div>
+
 	<div
 		class=" flex justify-between px-8 items-center py-3"
 		style={`color: ${colors.onPrimaryColor};`}
@@ -53,11 +55,4 @@
 </div>
 
 <style>
-	.simpleCard {
-		border-radius: 1.5rem;
-	}
-	.simpleCard img {
-		border-top-right-radius: 1.5rem;
-		border-top-left-radius: 1.5rem;
-	}
 </style>

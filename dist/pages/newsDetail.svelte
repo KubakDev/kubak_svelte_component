@@ -1,10 +1,24 @@
-<script>import Carousel from "../components/carousels/Carousel.svelte";
+<script>import FlatCard from "../components/cards/FlatCard.svelte";
+import MainCard from "../components/cards/MainCard.svelte";
+import SimpleCard from "../components/cards/SimpleCard.svelte";
+import SquareCard from "../components/cards/SquareCard.svelte";
+import { ImgSourceEnum } from "../components/models/imgSourceEnum";
+import Carousel from "../components/carousels/Carousel.svelte";
 export let data = {
   title: "",
   long_description: "",
   images: []
 };
 console.log("bnar bnar bnar be jaw ");
+let cardData = {
+  title: "Welcome",
+  img: "images/ibn7mdcfevd4rypbvsm1m.jpeg",
+  date: "",
+  thumbnail: "images/ibn7mdcfevd4rypbvsm1m.jpeg",
+  created_at: Date.now(),
+  short_description: "",
+  imgSource: ImgSourceEnum.remote
+};
 </script>
 
 <div class="w-full min-h-screen bg-[#292e36] flex flex-col items-center text-white">
@@ -16,4 +30,8 @@ console.log("bnar bnar bnar be jaw ");
 	<div>
 		{@html data.long_description}
 	</div>
+	<MainCard data={cardData} />
+	<SimpleCard data={cardData} />
+	<FlatCard data={cardData} />
+	<SquareCard data={cardData} />
 </div>
