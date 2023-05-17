@@ -1,18 +1,17 @@
-<script>
-	import FlatCard from '../components/cards/FlatCard.svelte';
-	import MainCard from '../components/cards/MainCard.svelte';
-	import SimpleCard from '../components/cards/SimpleCard.svelte';
-	import SquareCard from '../components/cards/SquareCard.svelte';
-	import { ImgSourceEnum } from '../components/models/imgSourceEnum';
-	import Carousel from '../components/carousels/Carousel.svelte';
-	export let data = {
-		title: '',
-		long_description: '',
-		images: []
-	};
-	export let long_description = '';
-	export let images = [];
-	console.log(data.images);
+<script>import FlatCard from "../components/cards/FlatCard.svelte";
+import MainCard from "../components/cards/MainCard.svelte";
+import SimpleCard from "../components/cards/SimpleCard.svelte";
+import SquareCard from "../components/cards/SquareCard.svelte";
+import { ImgSourceEnum } from "../components/models/imgSourceEnum";
+import Carousel from "../components/carousels/Carousel.svelte";
+export let data = {
+  title: "",
+  long_description: "",
+  images: []
+};
+export let long_description = "";
+export let images = [];
+console.log(data.images);
 </script>
 
 <div class="w-full min-h-screen bg-[#292e36] flex flex-col items-center text-white">
