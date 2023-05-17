@@ -4,15 +4,18 @@ export let data = {
   long_description: "",
   images: []
 };
+export let long_description = "";
+export let images = [];
+console.log(data.images);
 </script>
 
 <div class="w-full min-h-screen bg-[#292e36] flex flex-col items-center text-white">
 	<div class="">
-		{#if data.images.length > 1}
-			<Carousel images={data.images} showCaptions={false} divClass="bg-red-400" />
+		{#if images.length > 1}
+			<Carousel {images} showCaptions={false} divClass="bg-red-400" />
 		{/if}
 	</div>
 	<div>
-		{@html data.long_description}
+		{@html long_description}
 	</div>
 </div>

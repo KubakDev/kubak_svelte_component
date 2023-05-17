@@ -16,9 +16,6 @@
 		backgroundColor: '',
 		onBackgroundColor: ''
 	};
-	$: {
-		console.log(typeof data.thumbnail);
-	}
 </script>
 
 <div
