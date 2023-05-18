@@ -38,8 +38,8 @@
 	</div>
 
 	<div
-		class=" flex justify-between px-8 items-center py-3"
-		style={`color: ${colors.onPrimaryColor};`}
+		class=" flex justify-between items-center py-3"
+		style={`color: ${colors.onPrimaryColor};padding-left:2rem;padding-right:2rem;`}
 	>
 		<h1 class="text-2xl font-bold">{data.title}</h1>
 		<!-- format created_at date for only month -->
