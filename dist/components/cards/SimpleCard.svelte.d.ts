@@ -16,6 +16,10 @@ export default class SimpleCard extends SvelteComponentTyped<{
         backgroundColor: string;
         onBackgroundColor: string;
     } | undefined;
+    imageData?: {
+        thumbnail: string;
+        imgSource: ImgSourceEnum;
+    } | undefined;
 }, {
     [evt: string]: CustomEvent<any>;
 }, {}> {
@@ -40,6 +44,10 @@ declare const __propDef: {
             secondaryColor: string;
             backgroundColor: string;
             onBackgroundColor: string;
+        } | undefined;
+        imageData?: {
+            thumbnail: string;
+            imgSource: ImgSourceEnum;
         } | undefined;
     };
     events: {

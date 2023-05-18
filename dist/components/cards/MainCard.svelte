@@ -19,27 +19,29 @@
 		backgroundColor: '',
 		onBackgroundColor: ''
 	};
+	export let imageData = {
+		thumbnail: '',
+		imgSource: ImgSourceEnum.remote
+	};
 </script>
 
 <div
 	class="simpleCard w-full max-w-[600px] rounded-3xl cursor-pointer"
 	style={`background-color: ${colors.primaryColor};`}
 >
-	<div class=" overflow-hidden rounded-tl-3xl rounded-tr-3xl" style="height: 300px;">
-		<img
-			src={data.thumbnail
-				? data.imgSource === ImgSourceEnum.remote
-					? `${import.meta.env.VITE_PUBLIC_SUPABASE_STORAGE_URL}/${data.thumbnail}`
-					: data.thumbnail
-				: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
-			alt=""
-			class="w-full object-cover hover:scale-110 duration-300"
-		/>
-	</div>
-
+	<img
+		src={imageData.thumbnail
+			? imageData.imgSource === ImgSourceEnum.remote
+				? `${import.meta.env.VITE_PUBLIC_SUPABASE_STORAGE_URL}/${imageData.thumbnail}`
+				: imageData.thumbnail
+			: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
+		alt=""
+		class="w-full object-cover rounded-3xl"
+		style="height: 300px;"
+	/>
 	<div
-		class=" flex justify-between px-8 items-center py-3"
-		style={`color: ${colors.onPrimaryColor};`}
+		class=" flex justify-between items-center py-3"
+		style={`color: ${colors.onPrimaryColor};padding-left:2rem;padding-right:2rem;`}
 	>
 		<h1 class="text-2xl font-bold">{data.title}</h1>
 		<!-- format created_at date for only month -->

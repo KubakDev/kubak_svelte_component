@@ -5,40 +5,27 @@
 	import SquareCard from '$lib/components/cards/SquareCard.svelte';
 	import { ImgSourceEnum } from '$lib/components/models/imgSourceEnum';
 	import Carousel from '../components/carousels/Carousel.svelte';
-
-	export let data: {
-		title: string;
-		long_description: string;
-		images: { imgurl: string; id: number }[];
-	} = {
+	export let data = {
 		title: '',
 		long_description: '',
 		images: []
 	};
-	console.log('bnar bnar bnar be jaw ');
-
-	let cardData = {
-		title: 'Welcome',
-		img: 'images/ibn7mdcfevd4rypbvsm1m.jpeg',
-		date: '',
-		thumbnail: 'images/ibn7mdcfevd4rypbvsm1m.jpeg',
-		created_at: Date.now(),
-		short_description: '',
-		imgSource: ImgSourceEnum.remote
-	};
+	export let long_description = '';
+	export let images: { imgurl: string; id: number }[] = [] as { imgurl: string; id: number }[];
+	console.log(data.images);
 </script>
 
 <div class="w-full min-h-screen bg-[#292e36] flex flex-col items-center text-white">
 	<div class="">
-		{#if data.images.length > 1}
-			<Carousel images={data.images} showCaptions={false} divClass="bg-red-400" />
+		{#if images.length > 1}
+			<Carousel {images} showCaptions={false} divClass="bg-red-400" />
 		{/if}
 	</div>
 	<div>
-		{@html data.long_description}
+		{@html long_description}
 	</div>
-	<MainCard data={cardData} />
+	<!-- <MainCard data={cardData} />
 	<SimpleCard data={cardData} />
 	<FlatCard data={cardData} />
-	<SquareCard data={cardData} />
+	<SquareCard data={cardData} /> -->
 </div>

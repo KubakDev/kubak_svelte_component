@@ -4,11 +4,13 @@ declare const __propDef: {
         data?: {
             title: string;
             long_description: string;
-            images: {
-                imgurl: string;
-                id: number;
-            }[];
+            images: never[];
         } | undefined;
+        long_description?: string | undefined;
+        images?: {
+            imgurl: string;
+            id: number;
+        }[] | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;
