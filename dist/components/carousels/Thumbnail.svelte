@@ -1,7 +1,7 @@
-<script>import { ImgSourceEnum } from "../models/imgSourceEnum";
-export let thumbImg = "";
-export let altTag = "";
-export let titleLink = "";
+<script>import { ImgSourceEnum } from '../models/imgSourceEnum';
+export let thumbImg = '';
+export let altTag = '';
+export let titleLink = '';
 export let id;
 export let selected = false;
 export let imgSource = ImgSourceEnum.local;
@@ -31,5 +31,4 @@ export let imgSource = ImgSourceEnum.local;
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
-	}
-</style>
+	}</style>

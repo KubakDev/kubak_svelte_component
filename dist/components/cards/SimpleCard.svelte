@@ -55,5 +55,4 @@
 	.simpleCard img {
 		border-top-right-radius: 1.5rem;
 		border-top-left-radius: 1.5rem;
-	}
-</style>
+	}</style>

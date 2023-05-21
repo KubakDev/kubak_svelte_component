@@ -1,4 +1,6 @@
 <script lang="ts">
+	import MainCard from '$lib/components/cards/MainCard.svelte';
+	import TestCard from '$lib/components/cards/TestCard.svelte';
 	import NewsDetail from '$lib/pages/newsDetail.svelte';
 	let cardData = {
 		title: 'The Story',
@@ -14,6 +16,6 @@
 	};
 </script>
 
-<div class="">
-	<NewsDetail />
+<div class="flex justify-center items-center p-20">
+	<MainCard />
 </div>

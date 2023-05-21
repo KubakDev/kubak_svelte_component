@@ -1,6 +1,6 @@
-<script>export let name = "";
+<script>export let name = '';
 export let selected = false;
-export let indicatorClass = "";
+export let indicatorClass = '';
 </script>
 
 <button type="button" class={indicatorClass} class:active={selected} aria-label={name} on:click />
@@ -8,5 +8,4 @@ export let indicatorClass = "";
 <style>
   .active {
     opacity: 1;
-  }
-</style>
+  }</style>
