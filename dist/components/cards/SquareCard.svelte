@@ -39,7 +39,7 @@
 			style="border-radius: 12px;"
 		/>
 	</div>
-	<div class="h-[200px] flex flex-col justify-end px-8 py-5">
+	<div class="h-[200px] flex flex-col justify-end px-10 py-5">
 		<div class="w-full justify-center">
 			<h1 class="text-3xl font-bold pb-3" style={`color: ${colors.onPrimaryColor};`}>
 				{data.title}

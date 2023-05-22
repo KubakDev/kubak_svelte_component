@@ -1,6 +1,6 @@
 <script lang="ts">
-    import '../style.scss';
-    import '../app.postcss';
+	import '../style.css';
+	import '../app.postcss';
 </script>
 
 <slot />

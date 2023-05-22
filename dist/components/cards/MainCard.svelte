@@ -1,33 +1,41 @@
-<script>
-	import moment from 'moment';
-	import { ImgSourceEnum } from '../models/imgSourceEnum';
-
-	export let data = {
-		title: '',
-		img: '',
-		date: '',
-		thumbnail: '',
-		created_at: Date.now(),
-		short_description: '',
-		imgSource: ImgSourceEnum.remote
-	};
-	export let colors = {
-		onPrimaryColor: '',
-		onSecondaryColor: '',
-		primaryColor: '',
-		secondaryColor: '',
-		backgroundColor: '',
-		onBackgroundColor: ''
-	};
-	export let imageData = {
-		thumbnail: '',
-		imgSource: ImgSourceEnum.remote
-	};
+<script>import moment from 'moment';
+import { ImgSourceEnum } from '../models/imgSourceEnum';
+import Frame from '../../utils/Frame.svelte';
+import classNames from 'classnames';
+export let data = {
+    title: '',
+    img: '',
+    date: '',
+    thumbnail: '',
+    created_at: Date.now(),
+    short_description: '',
+    imgSource: ImgSourceEnum.remote
+};
+export let colors = {
+    onPrimaryColor: '',
+    onSecondaryColor: '',
+    primaryColor: '',
+    secondaryColor: '',
+    backgroundColor: '',
+    onBackgroundColor: ''
+};
+export let imageData = {
+    thumbnail: '',
+    imgSource: ImgSourceEnum.remote
+};
+let cardClass;
+$: cardClass = classNames(' w-full max-w-[600px] cursor-pointer   shadow-xl rounded-3xl bg-red-500');
 </script>
 
-<div
-	class="simpleCard w-full max-w-[600px] rounded-3xl cursor-pointer"
-	style={`background-color: ${colors.primaryColor};`}
+<Frame
+	tag={'div'}
+	on:click
+	on:focusin
+	on:focusout
+	on:mouseenter
+	on:mouseleave
+	{...$$restProps}
+	class={cardClass}
 >
 	<img
 		src={imageData.thumbnail
@@ -40,8 +48,8 @@
 		style="height: 300px;"
 	/>
 	<div
-		class=" flex justify-between px-8 items-center py-3"
-		style={`color: ${colors.onPrimaryColor};`}
+		class=" flex justify-between items-center py-3 px-8"
+		style={`color: ${colors.onPrimaryColor}`}
 	>
 		<h1 class="text-2xl font-bold">{data.title}</h1>
 		<!-- format created_at date for only month -->
@@ -56,7 +64,4 @@
 			{data.short_description}
 		</p>
 	</div>
-</div>
-
-<style>
-</style>
+</Frame>
