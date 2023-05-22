@@ -1,9 +1,4 @@
 <script lang="ts">
-	import FlatCard from '$lib/components/cards/FlatCard.svelte';
-	import MainCard from '$lib/components/cards/MainCard.svelte';
-	import SimpleCard from '$lib/components/cards/SimpleCard.svelte';
-	import SquareCard from '$lib/components/cards/SquareCard.svelte';
-	import { ImgSourceEnum } from '$lib/components/models/imgSourceEnum';
 	import Carousel from '../components/carousels/Carousel.svelte';
 	export let data = {
 		title: '',
@@ -24,8 +19,4 @@
 	<div>
 		{@html long_description}
 	</div>
-	<!-- <MainCard data={cardData} />
-	<SimpleCard data={cardData} />
-	<FlatCard data={cardData} />
-	<SquareCard data={cardData} /> -->
 </div>

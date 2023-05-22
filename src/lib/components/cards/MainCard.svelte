@@ -45,9 +45,11 @@
 	>
 		<h1 class="text-2xl font-bold">{data.title}</h1>
 		<!-- format created_at date for only month -->
-		<p style={`color: ${colors.onPrimaryColor};`}>
-			{moment(data.created_at).format('DD MMMM YYYY')}
-		</p>
+		{#if data.created_at}
+			<p style={`color: ${colors.onPrimaryColor};`}>
+				{moment(data.created_at).format('DD MMMM YYYY')}
+			</p>
+		{/if}
 	</div>
 	<div class="p-6">
 		<p style={`color: ${colors.onPrimaryColor};`}>
