@@ -1,16 +1,8 @@
 import { SvelteComponentTyped } from "svelte";
+import type { NewsModel } from '../../models/newsModel';
 declare const __propDef: {
     props: {
-        data?: {
-            title: string;
-            long_description: string;
-            images: never[];
-        } | undefined;
-        long_description?: string | undefined;
-        images?: {
-            imgurl: string;
-            id: number;
-        }[] | undefined;
+        news: NewsModel | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;

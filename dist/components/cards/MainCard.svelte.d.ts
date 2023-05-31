@@ -1,5 +1,5 @@
 import { SvelteComponentTyped } from "svelte";
-import { ImgSourceEnum } from '../models/imgSourceEnum';
+import { ImgSourceEnum } from '../../models/imgSourceEnum';
 declare const __propDef: {
     props: {
         [x: string]: any;

@@ -16,8 +16,8 @@
 		"dist"
 	],
 	"peerDependencies": {
-		"svelte": "^3.54.0",
-		"@sveltejs/kit": "^1.5.0"
+		"@sveltejs/kit": "^1.5.0",
+		"svelte": "^3.54.0"
 	},
 	"devDependencies": {
 		"@poppanator/sveltekit-svg": "^3.0.0",
@@ -31,8 +31,8 @@
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"flowbite": "^1.6.4",
-		"flowbite-svelte": "^0.34.7",
+		"flowbite": "^1.6.5",
+		"flowbite-svelte": "^0.37.2",
 		"ionicons": "^7.1.0",
 		"moment": "^2.29.4",
 		"postcss": "^8.4.21",

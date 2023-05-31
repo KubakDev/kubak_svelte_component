@@ -1,6 +1,6 @@
 <script lang="ts">
 	import moment from 'moment';
-	import { ImgSourceEnum } from '../models/imgSourceEnum';
+	import { ImgSourceEnum } from '../../models/imgSourceEnum';
 	import Frame from '../../utils/Frame.svelte';
 	import classNames from 'classnames';
 
@@ -45,7 +45,7 @@
 	<img
 		src={imageData.thumbnail
 			? imageData.imgSource === ImgSourceEnum.remote
-				? `${import.meta.env.VITE_PUBLIC_SUPABASE_STORAGE_URL}/${imageData.thumbnail}`
+				? `${imageData.thumbnail}`
 				: imageData.thumbnail
 			: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 		alt=""

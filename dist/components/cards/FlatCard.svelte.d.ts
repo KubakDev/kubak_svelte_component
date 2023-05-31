@@ -29,7 +29,7 @@ export default class FlatCard extends SvelteComponentTyped<{
 export type FlatCardProps = typeof __propDef.props;
 export type FlatCardEvents = typeof __propDef.events;
 export type FlatCardSlots = typeof __propDef.slots;
-import { ImgSourceEnum } from '../models/imgSourceEnum';
+import { ImgSourceEnum } from '../../models/imgSourceEnum';
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {

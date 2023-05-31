@@ -1,13 +1,12 @@
 import { SvelteComponentTyped } from "svelte";
-import { ImgSourceEnum } from '../models/imgSourceEnum';
 declare const __propDef: {
     props: {
         thumbImg?: string | undefined;
         altTag?: string | undefined;
         titleLink?: string | undefined;
         id: number;
+        thumbWidth: number;
         selected?: boolean | undefined;
-        imgSource?: ImgSourceEnum | undefined;
     };
     events: {
         click: MouseEvent;

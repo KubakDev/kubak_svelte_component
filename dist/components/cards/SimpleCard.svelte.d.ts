@@ -27,7 +27,7 @@ export default class SimpleCard extends SvelteComponentTyped<{
 export type SimpleCardProps = typeof __propDef.props;
 export type SimpleCardEvents = typeof __propDef.events;
 export type SimpleCardSlots = typeof __propDef.slots;
-import { ImgSourceEnum } from '../models/imgSourceEnum';
+import { ImgSourceEnum } from '../../models/imgSourceEnum';
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {

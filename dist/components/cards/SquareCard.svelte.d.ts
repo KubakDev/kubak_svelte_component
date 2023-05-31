@@ -29,7 +29,7 @@ export default class SquareCard extends SvelteComponentTyped<{
 export type SquareCardProps = typeof __propDef.props;
 export type SquareCardEvents = typeof __propDef.events;
 export type SquareCardSlots = typeof __propDef.slots;
-import { ImgSourceEnum } from '../models/imgSourceEnum';
+import { ImgSourceEnum } from '../../models/imgSourceEnum';
 import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
