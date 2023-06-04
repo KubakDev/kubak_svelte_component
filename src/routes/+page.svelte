@@ -1,5 +1,7 @@
 <script lang="ts">
-	import NewsDetail from '$lib/components/pages/newsDetail.svelte';
+	import { CardType } from '$lib';
+	import ExpoCard from '$lib/components/cards/ExpoCard.svelte';
+	import NewsDetail from '$lib/components/pages/DetailPage.svelte';
 	import type { CarouselImage, NewsModel } from '$lib/models/newsModel';
 	let news: NewsModel = {
 		id: 1,
@@ -32,5 +34,7 @@
 </script>
 
 <div class="m-auto max-w-6xl">
-	<NewsDetail {news} />
+	<!-- <NewsDetail {news} /> -->
+	<ExpoCard title="HI HI" thumbnail="kl" cardType={CardType.Main} />
+	<ExpoCard title="HI HI" thumbnail="kl" cardType={CardType.Square} />
 </div>

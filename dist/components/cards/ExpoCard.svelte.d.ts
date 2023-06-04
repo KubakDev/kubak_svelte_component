@@ -1,6 +1,6 @@
 import { SvelteComponentTyped } from "svelte";
-import type { Action } from 'svelte/action';
-import type { TransitionConfig } from 'svelte/transition';
+import { CardType } from '../../models/cardType';
+import { ImgSourceEnum } from '../../models/imgSourceEnum';
 declare const __propDef: {
     props: {
         download?: any;
@@ -16,7 +16,7 @@ declare const __propDef: {
         'sapper:prefetch'?: true | null | undefined;
         accesskey?: string | null | undefined;
         autofocus?: boolean | null | undefined;
-        class?: string | undefined;
+        class?: string | null | undefined;
         contenteditable?: import("svelte/elements").Booleanish | "inherit" | null | undefined;
         contextmenu?: string | null | undefined;
         dir?: string | null | undefined;
@@ -31,7 +31,7 @@ declare const __propDef: {
         spellcheck?: import("svelte/elements").Booleanish | null | undefined;
         style?: string | null | undefined;
         tabindex?: number | null | undefined;
-        title?: string | null | undefined;
+        title: string;
         translate?: "" | "yes" | "no" | null | undefined;
         inert?: boolean | null | undefined;
         radiogroup?: string | null | undefined;
@@ -235,32 +235,27 @@ declare const __propDef: {
         'on:close'?: import("svelte/elements").EventHandler<Event, HTMLAnchorElement> | null | undefined;
         'on:fullscreenchange'?: import("svelte/elements").EventHandler<Event, HTMLAnchorElement> | null | undefined;
         'on:fullscreenerror'?: import("svelte/elements").EventHandler<Event, HTMLAnchorElement> | null | undefined;
-        tag?: string | undefined;
-        rounded?: boolean | undefined;
-        border?: boolean | undefined;
-        shadow?: boolean | undefined;
-        transition?: ((node: HTMLElement, params: any) => TransitionConfig) | undefined;
-        params?: object | undefined;
-        node?: HTMLElement | undefined;
-        use?: Action<HTMLElement, any, Record<never, any>> | undefined;
-        options?: object | undefined;
+        img?: string | undefined;
+        cardType: CardType;
+        thumbnail: string;
+        created_at?: Date | undefined;
+        short_description?: string | undefined;
+        imgSource?: ImgSourceEnum | undefined;
+        overlayPrimaryColor?: string | undefined;
+        overlaySecondaryColor?: string | undefined;
+        primaryColor?: string | undefined;
+        secondaryColor?: string | undefined;
+        backgroundColor?: string | undefined;
+        overlayBackgroundColor?: string | undefined;
     };
     events: {
-        click: MouseEvent;
-        mouseenter: MouseEvent;
-        mouseleave: MouseEvent;
-        focusin: FocusEvent;
-        focusout: FocusEvent;
-    } & {
         [evt: string]: CustomEvent<any>;
     };
-    slots: {
-        default: {};
-    };
+    slots: {};
 };
-export type FrameProps = typeof __propDef.props;
-export type FrameEvents = typeof __propDef.events;
-export type FrameSlots = typeof __propDef.slots;
-export default class Frame extends SvelteComponentTyped<FrameProps, FrameEvents, FrameSlots> {
+export type ExpoCardProps = typeof __propDef.props;
+export type ExpoCardEvents = typeof __propDef.events;
+export type ExpoCardSlots = typeof __propDef.slots;
+export default class ExpoCard extends SvelteComponentTyped<ExpoCardProps, ExpoCardEvents, ExpoCardSlots> {
 }
 export {};

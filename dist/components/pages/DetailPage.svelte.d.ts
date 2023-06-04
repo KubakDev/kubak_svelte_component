@@ -1,6 +1,5 @@
 import { SvelteComponentTyped } from "svelte";
-import type { Action } from 'svelte/action';
-import type { TransitionConfig } from 'svelte/transition';
+import type { CarouselImage } from '../../models/newsModel';
 declare const __propDef: {
     props: {
         download?: any;
@@ -16,7 +15,7 @@ declare const __propDef: {
         'sapper:prefetch'?: true | null | undefined;
         accesskey?: string | null | undefined;
         autofocus?: boolean | null | undefined;
-        class?: string | undefined;
+        class?: string | null | undefined;
         contenteditable?: import("svelte/elements").Booleanish | "inherit" | null | undefined;
         contextmenu?: string | null | undefined;
         dir?: string | null | undefined;
@@ -235,32 +234,18 @@ declare const __propDef: {
         'on:close'?: import("svelte/elements").EventHandler<Event, HTMLAnchorElement> | null | undefined;
         'on:fullscreenchange'?: import("svelte/elements").EventHandler<Event, HTMLAnchorElement> | null | undefined;
         'on:fullscreenerror'?: import("svelte/elements").EventHandler<Event, HTMLAnchorElement> | null | undefined;
-        tag?: string | undefined;
-        rounded?: boolean | undefined;
-        border?: boolean | undefined;
-        shadow?: boolean | undefined;
-        transition?: ((node: HTMLElement, params: any) => TransitionConfig) | undefined;
-        params?: object | undefined;
-        node?: HTMLElement | undefined;
-        use?: Action<HTMLElement, any, Record<never, any>> | undefined;
-        options?: object | undefined;
+        imagesCarousel?: CarouselImage[] | undefined;
+        long_description: string | undefined;
+        videoId?: string | undefined;
     };
     events: {
-        click: MouseEvent;
-        mouseenter: MouseEvent;
-        mouseleave: MouseEvent;
-        focusin: FocusEvent;
-        focusout: FocusEvent;
-    } & {
         [evt: string]: CustomEvent<any>;
     };
-    slots: {
-        default: {};
-    };
+    slots: {};
 };
-export type FrameProps = typeof __propDef.props;
-export type FrameEvents = typeof __propDef.events;
-export type FrameSlots = typeof __propDef.slots;
-export default class Frame extends SvelteComponentTyped<FrameProps, FrameEvents, FrameSlots> {
+export type DetailPageProps = typeof __propDef.props;
+export type DetailPageEvents = typeof __propDef.events;
+export type DetailPageSlots = typeof __propDef.slots;
+export default class DetailPage extends SvelteComponentTyped<DetailPageProps, DetailPageEvents, DetailPageSlots> {
 }
 export {};
