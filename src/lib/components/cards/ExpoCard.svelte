@@ -39,13 +39,12 @@
 
 	$: cardClass = classNames(
 		' w-full cursor-pointer   shadow-xl rounded-3xl  relative ',
-		primaryColor ? ` ${primaryColor}` : ' bg-primary',
 		cardType === CardType.Main ? ' max-w-[400px] min-w-[300px]' : ' max-w-[600px]'
 	);
 </script>
 
 <!-- {#if cardType === CardType.Main} -->
-<div class={cardClass}>
+<div class={cardClass} style="background-color: {primaryColor}">
 	<div class="relative">
 		<img
 			src={thumbnail
