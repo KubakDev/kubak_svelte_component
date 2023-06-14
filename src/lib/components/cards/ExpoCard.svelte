@@ -4,7 +4,7 @@
 	import { ImgSourceEnum } from '$lib/models/imgSourceEnum';
 	import moment from 'moment';
 	import classNames from 'classnames';
-
+	('');
 	export let cardType: CardType = CardType.Flat;
 
 	export let title: string | undefined = undefined;
@@ -39,7 +39,7 @@
 
 	$: cardClass = classNames(
 		' w-full cursor-pointer   shadow-xl rounded-3xl  relative ',
-		primaryColor ? ' ' : ' bg-primary ',
+		primaryColor ? ' ' : '  bg-primary ',
 		cardType === CardType.Main ? ' max-w-[400px] min-w-[300px]' : ' max-w-[600px]'
 	);
 </script>
