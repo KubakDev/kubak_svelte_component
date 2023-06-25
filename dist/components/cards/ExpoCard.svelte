@@ -16,6 +16,7 @@ export let primaryColor = undefined;
 export let secondaryColor = undefined;
 export let backgroundColor = undefined;
 export let overlayBackgroundColor = undefined;
+export let date = undefined;
 $: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relative ', primaryColor ? ' ' : '  bg-primary ', ' w-full ');
 </script>
 
@@ -47,9 +48,9 @@ $: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relat
 			</div>
 		{/if}
 	</div>
-	<div class="{cardType !== CardType.Video ? 'h-40' : 'h-16 '} overflow-hidden">
+	<div class="{cardType !== CardType.Video ? 'h-40' : 'h-16 '} overflow-hidden flex flex-col">
 		<div
-			class=" flex justify-between items-center py-3 px-8 {cardType !== CardType.Video
+			class=" flex justify-between items-center py-3 px-6 {cardType !== CardType.Video
 				? ''
 				: ' h-full text-center'}  "
 			style={`color: ${overlayPrimaryColor}`}
@@ -62,17 +63,21 @@ $: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relat
 				{title?.slice(0, 40)}
 			</h1>
 			<!-- format created_at date for only month -->
-			{#if created_at}
-				<p style={`color: ${overlayPrimaryColor};`}>
-					{moment(created_at).format('DD MMMM YYYY')}
-				</p>
-			{/if}
 		</div>
-		{#if cardType !== CardType.Video}
+		{#if cardType !== CardType.Video && cardType !== CardType.Square}
 			<div class="px-6 text-base">
 				<p style={`color: ${overlayPrimaryColor};`}>
 					{short_description?.slice(0, 80)}
 				</p>
+			</div>
+		{/if}
+
+		{#if date}
+			<div class="flex-1 w-full" />
+			<div class="w-full flex justify-end px-6 pb-3">
+				<div style={`color: ${overlayPrimaryColor};`} class="text-xs">
+					{moment(created_at).format('DD MMMM YYYY')}
+				</div>
 			</div>
 		{/if}
 	</div>
