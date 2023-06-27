@@ -10,7 +10,6 @@
 	export let title: string | undefined = undefined;
 	export let img: string | undefined = undefined;
 	export let thumbnail: string | undefined = undefined;
-	export let created_at: Date | undefined = undefined;
 	export let short_description: string | undefined = undefined;
 	export let imgSource: ImgSourceEnum | undefined = undefined;
 	export let overlayPrimaryColor: string | undefined = undefined;
@@ -27,7 +26,6 @@
 		img?: string;
 		cardType: CardType;
 		thumbnail: string;
-		created_at?: Date;
 		short_description?: string;
 		imgSource?: ImgSourceEnum;
 		overlayPrimaryColor?: string | undefined;
@@ -102,7 +100,7 @@
 			<div class="flex-1 w-full" />
 			<div class="w-full flex justify-end px-6 pb-3">
 				<div style={`color: ${overlayPrimaryColor};`} class="text-xs">
-					{moment(created_at).format('DD MMMM YYYY')}
+					{moment(date).format('DD MMMM YYYY')}
 				</div>
 			</div>
 		{/if}
