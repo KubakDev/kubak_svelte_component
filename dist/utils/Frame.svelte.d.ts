@@ -21,7 +21,7 @@ declare const __propDef: {
         contextmenu?: string | null | undefined;
         dir?: string | null | undefined;
         draggable?: import("svelte/elements").Booleanish | null | undefined;
-        enterkeyhint?: "previous" | "next" | "search" | "enter" | "done" | "go" | "send" | null | undefined;
+        enterkeyhint?: "previous" | "next" | "enter" | "done" | "go" | "search" | "send" | null | undefined;
         hidden?: boolean | null | undefined;
         id?: string | null | undefined;
         lang?: string | null | undefined;
@@ -56,15 +56,24 @@ declare const __propDef: {
         results?: number | null | undefined;
         security?: string | null | undefined;
         unselectable?: "on" | "off" | null | undefined;
-        inputmode?: "none" | "search" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | null | undefined;
+        inputmode?: "none" | "text" | "search" | "tel" | "url" | "email" | "numeric" | "decimal" | null | undefined;
         is?: string | null | undefined;
         'bind:innerHTML'?: string | null | undefined;
         'bind:textContent'?: string | null | undefined;
         'bind:innerText'?: string | null | undefined;
         'bind:contentRect'?: DOMRectReadOnly | null | undefined;
-        'bind:contentBoxSize'?: ResizeObserverSize[] | null | undefined;
-        'bind:borderBoxSize'?: ResizeObserverSize[] | null | undefined;
-        'bind:devicePixelContentBoxSize'?: ResizeObserverSize[] | null | undefined;
+        'bind:contentBoxSize'?: {
+            blockSize: number;
+            inlineSize: number;
+        }[] | null | undefined;
+        'bind:borderBoxSize'?: {
+            blockSize: number;
+            inlineSize: number;
+        }[] | null | undefined;
+        'bind:devicePixelContentBoxSize'?: {
+            blockSize: number;
+            inlineSize: number;
+        }[] | null | undefined;
         'data-sveltekit-keepfocus'?: true | "" | "off" | null | undefined;
         'data-sveltekit-noscroll'?: true | "" | "off" | null | undefined;
         'data-sveltekit-preload-code'?: true | "" | "off" | "eager" | "viewport" | "hover" | "tap" | null | undefined;
@@ -133,9 +142,13 @@ declare const __propDef: {
         'on:beforeinput'?: import("svelte/elements").EventHandler<InputEvent, HTMLAnchorElement> | null | undefined;
         'on:input'?: import("svelte/elements").FormEventHandler<HTMLAnchorElement> | null | undefined;
         'on:reset'?: import("svelte/elements").FormEventHandler<HTMLAnchorElement> | null | undefined;
-        'on:submit'?: import("svelte/elements").EventHandler<SubmitEvent, HTMLAnchorElement> | null | undefined;
+        'on:submit'?: import("svelte/elements").EventHandler<Event & {
+            readonly submitter: HTMLElement | null;
+        }, HTMLAnchorElement> | null | undefined;
         'on:invalid'?: import("svelte/elements").EventHandler<Event, HTMLAnchorElement> | null | undefined;
-        'on:formdata'?: import("svelte/elements").EventHandler<FormDataEvent, HTMLAnchorElement> | null | undefined;
+        'on:formdata'?: import("svelte/elements").EventHandler<Event & {
+            readonly formData: FormData;
+        }, HTMLAnchorElement> | null | undefined;
         'on:load'?: import("svelte/elements").EventHandler<Event, Element> | null | undefined;
         'on:error'?: import("svelte/elements").EventHandler<Event, Element> | null | undefined;
         'on:toggle'?: import("svelte/elements").EventHandler<Event, HTMLAnchorElement> | null | undefined;
@@ -229,7 +242,7 @@ declare const __propDef: {
         transition?: ((node: HTMLElement, params: any) => TransitionConfig) | undefined;
         params?: object | undefined;
         node?: HTMLElement | undefined;
-        use?: Action<HTMLElement, never, Record<never, any>> | undefined;
+        use?: Action<HTMLElement, any, Record<never, any>> | undefined;
         options?: object | undefined;
     };
     events: {

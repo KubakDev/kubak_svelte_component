@@ -7,7 +7,6 @@ export let cardType = CardType.Flat;
 export let title = undefined;
 export let img = undefined;
 export let thumbnail = undefined;
-export let created_at = undefined;
 export let short_description = undefined;
 export let imgSource = undefined;
 export let overlayPrimaryColor = undefined;
@@ -17,6 +16,7 @@ export let secondaryColor = undefined;
 export let backgroundColor = undefined;
 export let overlayBackgroundColor = undefined;
 export let date = undefined;
+//
 $: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relative ', primaryColor ? ' ' : '  bg-primary ', ' w-full ');
 </script>
 
@@ -76,7 +76,7 @@ $: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relat
 			<div class="flex-1 w-full" />
 			<div class="w-full flex justify-end px-6 pb-3">
 				<div style={`color: ${overlayPrimaryColor};`} class="text-xs">
-					{moment(created_at).format('DD MMMM YYYY')}
+					{moment(date).format('DD MMMM YYYY')}
 				</div>
 			</div>
 		{/if}
