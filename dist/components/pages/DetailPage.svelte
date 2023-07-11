@@ -1,4 +1,4 @@
-<script>import { classNames } from 'classnames';
+<script>import classNames from 'classnames';
 import Carousel from '../CustomCarousels/Carousel.svelte';
 import VideoPlayer from './VideoPlayer.svelte';
 export let imagesCarousel = undefined;

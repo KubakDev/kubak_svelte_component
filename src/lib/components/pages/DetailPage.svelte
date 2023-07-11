@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { classNames } from 'classnames';
+	import classNames from 'classnames';
 	import Carousel from '$lib/components/CustomCarousels/Carousel.svelte';
 	import type { CarouselImage } from '$lib/models/newsModel';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
