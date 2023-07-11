@@ -30,7 +30,7 @@ $: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relat
 					: thumbnail
 				: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 			alt=""
-			class="w-full object-cover rounded-3xl {cardType !== CardType.Video ? 'h-72' : 'h-52'} "
+			class="w-full object-cover rounded-top-3xl {cardType !== CardType.Video ? 'h-72' : 'h-52'} "
 		/>
 		<!--  video player icon  -->
 		{#if cardType === CardType.Video}

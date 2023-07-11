@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { classNames } from 'classnames';
 	import Carousel from '$lib/components/CustomCarousels/Carousel.svelte';
 	import type { CarouselImage } from '$lib/models/newsModel';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
@@ -6,15 +7,23 @@
 	export let imagesCarousel: CarouselImage[] | undefined = undefined;
 	export let long_description: string | undefined = undefined;
 	export let videoId: string | undefined = undefined;
+	export let customClass:string | undefined = undefined;
 
 	interface $$Props extends HTMLAnchorAttributes {
 		imagesCarousel?: CarouselImage[] | undefined;
 		long_description: string | undefined;
 		videoId?: string | undefined;
+		classNames?:string | undefined;
 	}
+
+	$: detailClass = classNames(
+		' w-full bg-[#292e36] flex flex-col items-center text-white ',
+		customClass
+
+	);
 </script>
 
-<div class="w-full bg-[#292e36] flex flex-col items-center text-white">
+<div class={detailClass}>
 	{#if imagesCarousel}
 		<Carousel
 			divClass="w-full overflow-hidden relative h-80  md:h-96    lg:h-[34rem]  2xl:h-140"
