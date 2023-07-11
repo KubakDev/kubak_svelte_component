@@ -1,5 +1,5 @@
 import { SvelteComponentTyped } from "svelte";
-import type { CarouselImage } from '../../models/newsModel';
+import type { CarouselImage } from '$lib/models/newsModel';
 declare const __propDef: {
     props: {
         download?: any;

@@ -13,6 +13,7 @@
 		imagesCarousel?: CarouselImage[] | undefined;
 		long_description: string | undefined;
 		videoId?: string | undefined;
+		customClass?:string | undefined;
 	}
 </script>
 
