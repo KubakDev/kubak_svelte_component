@@ -224,7 +224,6 @@ declare const __propDef: {
         imagesCarousel?: CarouselImage[] | undefined;
         long_description: string | undefined;
         videoId?: string | undefined;
-        classNames?: string | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;

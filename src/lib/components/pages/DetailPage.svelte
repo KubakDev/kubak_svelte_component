@@ -13,17 +13,10 @@
 		imagesCarousel?: CarouselImage[] | undefined;
 		long_description: string | undefined;
 		videoId?: string | undefined;
-		classNames?:string | undefined;
 	}
-
-	$: detailClass = classNames(
-		' w-full bg-[#292e36] flex flex-col items-center text-white ',
-		customClass
-
-	);
 </script>
 
-<div class={detailClass}>
+<div class=' w-full bg-[#292e36] flex flex-col items-center text-white {customClass}'>
 	{#if imagesCarousel}
 		<Carousel
 			divClass="w-full overflow-hidden relative h-80  md:h-96    lg:h-[34rem]  2xl:h-140"

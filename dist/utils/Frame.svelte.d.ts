@@ -229,7 +229,7 @@ declare const __propDef: {
         transition?: ((node: HTMLElement, params: any) => TransitionConfig) | undefined;
         params?: object | undefined;
         node?: HTMLElement | undefined;
-        use?: Action<HTMLElement, never, Record<never, any>> | undefined;
+        use?: Action<HTMLElement, undefined, Record<never, any>> | undefined;
         options?: object | undefined;
     };
     events: {
