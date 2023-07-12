@@ -19,6 +19,7 @@
 	export let backgroundColor: string | undefined = undefined;
 	export let overlayBackgroundColor: string | undefined = undefined;
 	export let date: Date | undefined = undefined;
+	export let imageClass: string | undefined = undefined;
 
 	// propagate props type from underlying
 	interface $$Props extends HTMLAnchorAttributes {
@@ -35,6 +36,7 @@
 		backgroundColor?: string | undefined;
 		overlayBackgroundColor?: string | undefined;
 		date?: Date | undefined;
+		imageClass?: string | undefined;
 	}
 	//
 	$: cardClass = classNames(
@@ -54,7 +56,7 @@
 					: thumbnail
 				: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 			alt=""
-			class="w-full object-cover rounded-t-3xl {cardType !== CardType.Video ? 'h-72' : 'h-52'} "
+			class="w-full {imageClass} {cardType !== CardType.Video ? 'h-72' : 'h-52'} "
 		/>
 		<!--  video player icon  -->
 		{#if cardType === CardType.Video}
