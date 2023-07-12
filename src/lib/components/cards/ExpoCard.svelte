@@ -84,7 +84,7 @@
 					? 'text-start'
 					: 'text-center  '} font-bold text-lg w-full"
 			>
-				{title?.slice(0, 40)}
+				{title}
 			</h1>
 			<!-- format created_at date for only month -->
 		</div>

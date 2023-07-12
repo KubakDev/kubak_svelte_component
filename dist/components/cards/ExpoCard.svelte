@@ -60,7 +60,7 @@ $: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relat
 					? 'text-start'
 					: 'text-center  '} font-bold text-lg w-full"
 			>
-				{title?.slice(0, 40)}
+				{title}
 			</h1>
 			<!-- format created_at date for only month -->
 		</div>
