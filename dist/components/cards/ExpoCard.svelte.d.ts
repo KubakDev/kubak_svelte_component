@@ -234,6 +234,7 @@ declare const __propDef: {
         backgroundColor?: string | undefined;
         overlayBackgroundColor?: string | undefined;
         date?: Date | undefined;
+        imageClass?: string | undefined;
     };
     events: {
         [evt: string]: CustomEvent<any>;
