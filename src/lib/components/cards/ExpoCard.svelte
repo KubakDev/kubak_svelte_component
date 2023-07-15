@@ -21,6 +21,8 @@
 	export let overlayBackgroundColor: string | undefined = undefined;
 	export let startDate: Date | undefined = undefined;
 	export let endDate: Date | undefined = undefined;
+	export let date: Date | undefined = undefined;
+	export let imageClass: string | undefined = undefined;
 
 	// propagate props type from underlying
 	interface $$Props extends HTMLAnchorAttributes {
@@ -38,10 +40,12 @@
 		overlayBackgroundColor?: string | undefined;
 		startDate?: Date | undefined;
 		endDate?: Date | undefined;
+		date?: Date | undefined;
+		imageClass?: string | undefined;
 	}
 	//
 	$: cardClass = classNames(
-		' w-full cursor-pointer   shadow-xl rounded-3xl  relative ',
+		' w-full cursor-pointer shadow-xl rounded-3xl relative ',
 		primaryColor ? ' ' : '  bg-primary ',
 		' w-full '
 	);
@@ -57,7 +61,7 @@
 					: thumbnail
 				: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 			alt=""
-			class="w-full object-cover rounded-top-3xl {cardType !== CardType.Video ? 'h-72' : 'h-52'} "
+			class="w-full {imageClass} {cardType !== CardType.Video ? 'h-72' : 'h-52'} "
 		/>
 		<!--  video player icon  -->
 		{#if cardType === CardType.Video}
@@ -87,7 +91,7 @@
 					? 'text-start'
 					: 'text-center  '} font-bold text-lg w-full"
 			>
-				{title?.slice(0, 40)}
+				{title}
 			</h1>
 			<!-- format created_at date for only month -->
 		</div>

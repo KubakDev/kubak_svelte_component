@@ -18,8 +18,10 @@ export let backgroundColor = undefined;
 export let overlayBackgroundColor = undefined;
 export let startDate = undefined;
 export let endDate = undefined;
+export let date = undefined;
+export let imageClass = undefined;
 //
-$: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relative ', primaryColor ? ' ' : '  bg-primary ', ' w-full ');
+$: cardClass = classNames(' w-full cursor-pointer shadow-xl rounded-3xl relative ', primaryColor ? ' ' : '  bg-primary ', ' w-full ');
 </script>
 
 <!-- {#if cardType === CardType.Main} -->
@@ -32,7 +34,7 @@ $: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relat
 					: thumbnail
 				: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 			alt=""
-			class="w-full object-cover rounded-top-3xl {cardType !== CardType.Video ? 'h-72' : 'h-52'} "
+			class="w-full {imageClass} {cardType !== CardType.Video ? 'h-72' : 'h-52'} "
 		/>
 		<!--  video player icon  -->
 		{#if cardType === CardType.Video}
@@ -62,7 +64,7 @@ $: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relat
 					? 'text-start'
 					: 'text-center  '} font-bold text-lg w-full"
 			>
-				{title?.slice(0, 40)}
+				{title}
 			</h1>
 			<!-- format created_at date for only month -->
 		</div>
