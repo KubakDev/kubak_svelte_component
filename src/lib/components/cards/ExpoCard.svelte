@@ -21,7 +21,6 @@
 	export let overlayBackgroundColor: string | undefined = undefined;
 	export let startDate: Date | undefined = undefined;
 	export let endDate: Date | undefined = undefined;
-	export let date: Date | undefined = undefined;
 	export let imageClass: string | undefined = undefined;
 
 	// propagate props type from underlying

@@ -18,7 +18,6 @@ export let backgroundColor = undefined;
 export let overlayBackgroundColor = undefined;
 export let startDate = undefined;
 export let endDate = undefined;
-export let date = undefined;
 export let imageClass = undefined;
 //
 $: cardClass = classNames(' w-full cursor-pointer shadow-xl rounded-3xl relative ', primaryColor ? ' ' : '  bg-primary ', ' w-full ');
