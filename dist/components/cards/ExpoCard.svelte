@@ -2,6 +2,7 @@
 import { ImgSourceEnum } from '../../models/imgSourceEnum';
 import moment from 'moment';
 import classNames from 'classnames';
+import { end } from '@popperjs/core';
 ('');
 export let cardType = CardType.Flat;
 export let title = undefined;
@@ -15,7 +16,8 @@ export let primaryColor = undefined;
 export let secondaryColor = undefined;
 export let backgroundColor = undefined;
 export let overlayBackgroundColor = undefined;
-export let date = undefined;
+export let startDate = undefined;
+export let endDate = undefined;
 //
 $: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relative ', primaryColor ? ' ' : '  bg-primary ', ' w-full ');
 </script>
@@ -72,11 +74,11 @@ $: cardClass = classNames(' w-full cursor-pointer   shadow-xl rounded-3xl  relat
 			</div>
 		{/if}
 
-		{#if date}
+		{#if startDate}
 			<div class="flex-1 w-full" />
 			<div class="w-full flex justify-end px-6 pb-3">
 				<div style={`color: ${overlayPrimaryColor};`} class="text-xs">
-					{moment(date).format('DD MMMM YYYY')}
+					{moment(startDate).format('DD MMMM YYYY')}-{moment(endDate).format('DD MMMM YYYY')}
 				</div>
 			</div>
 		{/if}

@@ -4,6 +4,7 @@
 	import { ImgSourceEnum } from '$lib/models/imgSourceEnum';
 	import moment from 'moment';
 	import classNames from 'classnames';
+	import { end } from '@popperjs/core';
 	('');
 	export let cardType: CardType = CardType.Flat;
 
@@ -18,7 +19,8 @@
 	export let secondaryColor: string | undefined = undefined;
 	export let backgroundColor: string | undefined = undefined;
 	export let overlayBackgroundColor: string | undefined = undefined;
-	export let date: Date | undefined = undefined;
+	export let startDate: Date | undefined = undefined;
+	export let endDate: Date | undefined = undefined;
 
 	// propagate props type from underlying
 	interface $$Props extends HTMLAnchorAttributes {
@@ -34,7 +36,8 @@
 		secondaryColor?: string | undefined;
 		backgroundColor?: string | undefined;
 		overlayBackgroundColor?: string | undefined;
-		date?: Date | undefined;
+		startDate?: Date | undefined;
+		endDate?: Date | undefined;
 	}
 	//
 	$: cardClass = classNames(
@@ -96,11 +99,11 @@
 			</div>
 		{/if}
 
-		{#if date}
+		{#if startDate}
 			<div class="flex-1 w-full" />
 			<div class="w-full flex justify-end px-6 pb-3">
 				<div style={`color: ${overlayPrimaryColor};`} class="text-xs">
-					{moment(date).format('DD MMMM YYYY')}
+					{moment(startDate).format('DD MMMM YYYY')}-{moment(endDate).format('DD MMMM YYYY')}
 				</div>
 			</div>
 		{/if}
