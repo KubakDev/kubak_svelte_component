@@ -103,7 +103,14 @@
 			</div>
 		{/if}
 
-		{#if startDate}
+		{#if date}
+		<div class="flex-1 w-full" />
+		<div class="w-full flex justify-end px-6 pb-3">
+			<div style={`color: ${overlayPrimaryColor};`} class="text-xs">
+				{moment(date).format('DD MMMM YYYY')}
+			</div>
+		</div>
+		{:else if startDate && endDate}
 			<div class="flex-1 w-full" />
 			<div class="w-full flex justify-end px-6 pb-3">
 				<div style={`color: ${overlayPrimaryColor};`} class="text-xs">
