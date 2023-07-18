@@ -1,5 +1,4 @@
-<script>import classNames from 'classnames';
-import Carousel from '../CustomCarousels/Carousel.svelte';
+<script>import Carousel from '../CustomCarousels/Carousel.svelte';
 import VideoPlayer from './VideoPlayer.svelte';
 export let imagesCarousel = undefined;
 export let long_description = undefined;
@@ -7,7 +6,7 @@ export let videoId = undefined;
 export let customClass = undefined;
 </script>
 
-<div class=' w-full flex flex-col items-center {customClass}'>
+<div class=" w-full flex flex-col items-center {customClass}">
 	{#if imagesCarousel}
 		<Carousel
 			divClass="w-full overflow-hidden relative h-80  md:h-96    lg:h-[34rem]  2xl:h-140"

@@ -1,4 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
+import { SvelteComponent } from "svelte";
 import type { CarouselImage } from '../../models/newsModel';
 declare const __propDef: {
     props: {
@@ -234,6 +234,6 @@ declare const __propDef: {
 export type DetailPageProps = typeof __propDef.props;
 export type DetailPageEvents = typeof __propDef.events;
 export type DetailPageSlots = typeof __propDef.slots;
-export default class DetailPage extends SvelteComponentTyped<DetailPageProps, DetailPageEvents, DetailPageSlots> {
+export default class DetailPage extends SvelteComponent<DetailPageProps, DetailPageEvents, DetailPageSlots> {
 }
 export {};
