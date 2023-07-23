@@ -3,7 +3,7 @@
 	import { ImgSourceEnum } from '../../models/imgSourceEnum';
 	import moment from 'moment';
 	import classNames from 'classnames';
-	export let cardType = CardType.Flat;
+	export let cardType = CardType;
 	export let title = undefined;
 	export let img = undefined;
 	export let thumbnail = undefined;
@@ -19,7 +19,7 @@
 	export let endDate = undefined;
 	export let date = undefined;
 	export let imageClass = undefined;
-	//
+	//rovar
 	$: cardClass = classNames(
 		' w-full cursor-pointer shadow-xl relative ',
 		primaryColor ? ' ' : '  bg-[var(--primaryColor)] ',
