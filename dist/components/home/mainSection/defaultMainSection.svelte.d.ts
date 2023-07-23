@@ -1,7 +1,7 @@
 /** @typedef {typeof __propDef.props}  DefaultMainSectionProps */
 /** @typedef {typeof __propDef.events}  DefaultMainSectionEvents */
 /** @typedef {typeof __propDef.slots}  DefaultMainSectionSlots */
-export default class DefaultMainSection extends SvelteComponent<{
+export default class DefaultMainSection extends SvelteComponentTyped<{
     [x: string]: never;
 }, {
     [evt: string]: CustomEvent<any>;
@@ -10,7 +10,7 @@ export default class DefaultMainSection extends SvelteComponent<{
 export type DefaultMainSectionProps = typeof __propDef.props;
 export type DefaultMainSectionEvents = typeof __propDef.events;
 export type DefaultMainSectionSlots = typeof __propDef.slots;
-import { SvelteComponent } from "svelte";
+import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         [x: string]: never;

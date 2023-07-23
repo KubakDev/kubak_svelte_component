@@ -1,4 +1,4 @@
-import { SvelteComponent } from "svelte";
+import { SvelteComponentTyped } from "svelte";
 import type { Action } from 'svelte/action';
 import type { TransitionConfig } from 'svelte/transition';
 declare const __propDef: {
@@ -248,6 +248,6 @@ declare const __propDef: {
 export type FrameProps = typeof __propDef.props;
 export type FrameEvents = typeof __propDef.events;
 export type FrameSlots = typeof __propDef.slots;
-export default class Frame extends SvelteComponent<FrameProps, FrameEvents, FrameSlots> {
+export default class Frame extends SvelteComponentTyped<FrameProps, FrameEvents, FrameSlots> {
 }
 export {};

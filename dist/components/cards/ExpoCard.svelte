@@ -3,7 +3,7 @@
 	import { ImgSourceEnum } from '../../models/imgSourceEnum';
 	import moment from 'moment';
 	import classNames from 'classnames';
-	export let cardType = CardType.Flat;
+	export let cardType = CardType;
 	export let title = undefined;
 	export let img = undefined;
 	export let thumbnail = undefined;
@@ -19,7 +19,7 @@
 	export let endDate = undefined;
 	export let date = undefined;
 	export let imageClass = undefined;
-	//
+	//rovar
 	$: cardClass = classNames(
 		' w-full cursor-pointer shadow-xl relative ',
 		primaryColor ? ' ' : '  bg-[var(--primaryColor)] ',
@@ -39,7 +39,7 @@
 </script>
 
 {#if cardType == CardType.Main}
-	<div class={cardClass} style="border-radius: 30px;">
+	<div class={cardClass} style="border-radius: 30px;background-color: {primaryColor};">
 		<div class="relative">
 			<img
 				src={thumbnail
@@ -79,7 +79,7 @@
 	</div>
 {/if}
 {#if cardType == CardType.Flat}
-	<div class={cardClass}>
+	<div class={cardClass} style="background-color: {primaryColor};">
 		<div class="relative">
 			<img
 				src={thumbnail
@@ -121,7 +121,7 @@
 {/if}
 
 {#if cardType == CardType.Square}
-	<div class={cardClass} style="border-radius: 12px;">
+	<div class={cardClass} style="border-radius: 12px; background-color: {primaryColor};">
 		<div class="relative">
 			<img
 				src={thumbnail
@@ -156,7 +156,7 @@
 	</div>
 {/if}
 {#if cardType == CardType.Video}
-	<div class={cardClass} style="border-radius: 30px;">
+	<div class={cardClass} style="border-radius: 30px; background-color: {primaryColor};">
 		<div class="relative">
 			<img
 				src={thumbnail

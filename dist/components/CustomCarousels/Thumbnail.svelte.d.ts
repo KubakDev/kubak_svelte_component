@@ -1,4 +1,4 @@
-import { SvelteComponent } from "svelte";
+import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         thumbImg?: string | undefined;
@@ -18,6 +18,6 @@ declare const __propDef: {
 export type ThumbnailProps = typeof __propDef.props;
 export type ThumbnailEvents = typeof __propDef.events;
 export type ThumbnailSlots = typeof __propDef.slots;
-export default class Thumbnail extends SvelteComponent<ThumbnailProps, ThumbnailEvents, ThumbnailSlots> {
+export default class Thumbnail extends SvelteComponentTyped<ThumbnailProps, ThumbnailEvents, ThumbnailSlots> {
 }
 export {};

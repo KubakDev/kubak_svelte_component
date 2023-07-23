@@ -1,4 +1,4 @@
-import { SvelteComponent } from "svelte";
+import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         videoId: string;
@@ -11,6 +11,6 @@ declare const __propDef: {
 export type VideoPlayerProps = typeof __propDef.props;
 export type VideoPlayerEvents = typeof __propDef.events;
 export type VideoPlayerSlots = typeof __propDef.slots;
-export default class VideoPlayer extends SvelteComponent<VideoPlayerProps, VideoPlayerEvents, VideoPlayerSlots> {
+export default class VideoPlayer extends SvelteComponentTyped<VideoPlayerProps, VideoPlayerEvents, VideoPlayerSlots> {
 }
 export {};

@@ -1,4 +1,4 @@
-import { SvelteComponent } from "svelte";
+import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         name?: string | undefined;
@@ -15,6 +15,6 @@ declare const __propDef: {
 export type IndicatorProps = typeof __propDef.props;
 export type IndicatorEvents = typeof __propDef.events;
 export type IndicatorSlots = typeof __propDef.slots;
-export default class Indicator extends SvelteComponent<IndicatorProps, IndicatorEvents, IndicatorSlots> {
+export default class Indicator extends SvelteComponentTyped<IndicatorProps, IndicatorEvents, IndicatorSlots> {
 }
 export {};

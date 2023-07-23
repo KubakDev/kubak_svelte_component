@@ -1,4 +1,4 @@
-import { SvelteComponent } from "svelte";
+import { SvelteComponentTyped } from "svelte";
 declare const __propDef: {
     props: {
         caption?: string | undefined;
@@ -12,6 +12,6 @@ declare const __propDef: {
 export type CaptionProps = typeof __propDef.props;
 export type CaptionEvents = typeof __propDef.events;
 export type CaptionSlots = typeof __propDef.slots;
-export default class Caption extends SvelteComponent<CaptionProps, CaptionEvents, CaptionSlots> {
+export default class Caption extends SvelteComponentTyped<CaptionProps, CaptionEvents, CaptionSlots> {
 }
 export {};
