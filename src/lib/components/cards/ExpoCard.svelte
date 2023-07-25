@@ -25,6 +25,8 @@
 		primaryColor ? ' ' : '  bg-[var(--primaryColor)] ',
 		' w-full '
 	);
+
+	$: dateText = getDate();
 	function getDate() {
 		let dateText = '';
 		if (startDate && endDate) {
@@ -75,7 +77,7 @@
 						style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 						class="text-base"
 					>
-						{getDate()}
+						{moment(date).format('DD MMM YYYY')}
 					</div>
 				</div>
 			</div>

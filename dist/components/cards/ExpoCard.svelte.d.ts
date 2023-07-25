@@ -1,7 +1,7 @@
 /** @typedef {typeof __propDef.props}  ExpoCardProps */
 /** @typedef {typeof __propDef.events}  ExpoCardEvents */
 /** @typedef {typeof __propDef.slots}  ExpoCardSlots */
-export default class ExpoCard extends SvelteComponentTyped<{
+export default class ExpoCard extends SvelteComponent<{
     img?: any;
     title?: any;
     date?: any;
@@ -26,7 +26,7 @@ export type ExpoCardProps = typeof __propDef.props;
 export type ExpoCardEvents = typeof __propDef.events;
 export type ExpoCardSlots = typeof __propDef.slots;
 import { CardType } from '../../models/cardType';
-import { SvelteComponentTyped } from "svelte";
+import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
         img?: any;

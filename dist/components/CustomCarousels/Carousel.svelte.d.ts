@@ -1,4 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
+import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
         showIndicators?: boolean | undefined;
@@ -25,6 +25,6 @@ declare const __propDef: {
 export type CarouselProps = typeof __propDef.props;
 export type CarouselEvents = typeof __propDef.events;
 export type CarouselSlots = typeof __propDef.slots;
-export default class Carousel extends SvelteComponentTyped<CarouselProps, CarouselEvents, CarouselSlots> {
+export default class Carousel extends SvelteComponent<CarouselProps, CarouselEvents, CarouselSlots> {
 }
 export {};

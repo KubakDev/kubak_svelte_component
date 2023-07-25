@@ -25,6 +25,8 @@
 		primaryColor ? ' ' : '  bg-[var(--primaryColor)] ',
 		' w-full '
 	);
+
+	$: dateText = getDate();
 	function getDate() {
 		let dateText = '';
 		if (startDate && endDate) {
@@ -39,7 +41,10 @@
 </script>
 
 {#if cardType == CardType.Main}
-	<div class={cardClass} style="border-radius: 30px;background-color: {primaryColor};">
+	<div
+		class="{cardClass} max-w-2xl mx-auto"
+		style="border-radius: 30px;background-color: {primaryColor};"
+	>
 		<div class="relative">
 			<img
 				src={thumbnail
@@ -48,7 +53,7 @@
 						: thumbnail
 					: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 				alt=""
-				class="w-full h-72"
+				class="h-72 w-full object-cover"
 				style="border-top-right-radius: 30px;border-top-left-radius: 30px;"
 			/>
 		</div>
@@ -58,21 +63,32 @@
 				class=" flex justify-between items-center py-3 px-6 {cardType !== CardType.Video
 					? ''
 					: ' h-full text-center'}  "
-				style={`color: ${overlayPrimaryColor ?? 'var(--onPrimaryColor)'}`}
+				style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 			>
-				<h1 class="text-start font-bold text-xl w-full">
-					{title}
+				<h1 class="text-start font-bold text-base w-full">
+					{#if title?.length > 20}
+						{title?.slice(0, 20)}...
+					{:else}
+						{title}
+					{/if}
 				</h1>
-				<div class="w-full flex justify-end pb-3">
-					<div style={`color: ${overlayPrimaryColor ?? 'var(--onPrimaryColor)'}`} class="text-xs">
-						{getDate()}
+				<div class="w-full flex justify-end">
+					<div
+						style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
+						class="text-base"
+					>
+						{moment(date).format('DD MMM YYYY')}
 					</div>
 				</div>
 			</div>
 
 			<div class="px-6 text-base">
-				<p style={`color: ${overlayPrimaryColor ?? 'var(--onPrimaryColor)'}`}>
-					{short_description?.slice(0, 80)}
+				<p style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}>
+					{#if short_description?.length > 80}
+						{short_description?.slice(0, 80)}...
+					{:else}
+						{short_description}
+					{/if}
 				</p>
 			</div>
 		</div>
@@ -98,7 +114,7 @@
 					class=" flex justify-between items-center py-3 px-6 {cardType !== CardType.Video
 						? ''
 						: ' h-full text-center'}  "
-					style={`color: ${overlayPrimaryColor ?? 'var(--onPrimaryColor)'}`}
+					style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 				>
 					<h1 class="text-start font-bold text-xl w-full">
 						{title.toUpperCase()}
@@ -106,13 +122,16 @@
 				</div>
 
 				<div class="px-6 text-base">
-					<p style={`color: ${overlayPrimaryColor ?? 'var(--onPrimaryColor)'}`}>
+					<p style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}>
 						{short_description?.slice(0, 80)}
 					</p>
 				</div>
 			</div>
 			<div class="w-full flex justify-end pb-3 px-3">
-				<div style={`color: ${overlayPrimaryColor ?? 'var(--onPrimaryColor)'}`} class="text-xs">
+				<div
+					style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
+					class="text-xs"
+				>
 					{getDate()}
 				</div>
 			</div>
@@ -140,7 +159,7 @@
 				class=" flex justify-between items-center py-3 {cardType !== CardType.Video
 					? ''
 					: ' h-full text-center'}  "
-				style={`color: ${overlayPrimaryColor ?? 'var(--onPrimaryColor)'}`}
+				style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 			>
 				<h1 class="text-start font-bold text-xl w-full">
 					{title}
@@ -148,7 +167,10 @@
 			</div>
 
 			<div class=" pb-3">
-				<div style={`color: ${overlayPrimaryColor ?? 'var(--onPrimaryColor)'}`} class="text-xs">
+				<div
+					style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
+					class="text-xs"
+				>
 					{getDate()}
 				</div>
 			</div>
@@ -187,7 +209,7 @@
 				class=" flex justify-center items-center py-3 px-6 {cardType !== CardType.Video
 					? ''
 					: ' h-full text-center'}  "
-				style={`color: ${overlayPrimaryColor ?? 'var(--onPrimaryColor)'}`}
+				style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 			>
 				<h1 class="text-center font-bold text-xl w-full">
 					{title}

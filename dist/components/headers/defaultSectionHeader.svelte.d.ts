@@ -1,4 +1,4 @@
-import { SvelteComponentTyped } from "svelte";
+import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
         title: string;
@@ -11,6 +11,6 @@ declare const __propDef: {
 export type DefaultSectionHeaderProps = typeof __propDef.props;
 export type DefaultSectionHeaderEvents = typeof __propDef.events;
 export type DefaultSectionHeaderSlots = typeof __propDef.slots;
-export default class DefaultSectionHeader extends SvelteComponentTyped<DefaultSectionHeaderProps, DefaultSectionHeaderEvents, DefaultSectionHeaderSlots> {
+export default class DefaultSectionHeader extends SvelteComponent<DefaultSectionHeaderProps, DefaultSectionHeaderEvents, DefaultSectionHeaderSlots> {
 }
 export {};
