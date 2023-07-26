@@ -26,7 +26,6 @@
 		' w-full '
 	);
 
-	$: dateText = getDate();
 	function getDate() {
 		let dateText = '';
 		if (startDate && endDate) {
@@ -95,7 +94,7 @@
 	</div>
 {/if}
 {#if cardType == CardType.Flat}
-	<div class={cardClass} style="background-color: {primaryColor};">
+	<div class="{cardClass} max-w-2xl mx-auto" style="background-color: {primaryColor};">
 		<div class="relative">
 			<img
 				src={thumbnail
@@ -104,7 +103,7 @@
 						: thumbnail
 					: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 				alt=""
-				class="w-full h-72"
+				class="w-full h-72 object-cover"
 			/>
 		</div>
 
@@ -140,7 +139,7 @@
 {/if}
 
 {#if cardType == CardType.Square}
-	<div class={cardClass} style="border-radius: 12px; background-color: {primaryColor};">
+	<div class="{cardClass} max-w-2xl mx-auto" style="border-radius: 12px; background-color: {primaryColor};">
 		<div class="relative">
 			<img
 				src={thumbnail
@@ -149,7 +148,7 @@
 						: thumbnail
 					: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 				alt=""
-				class="w-full h-72 p-3"
+				class="w-full h-72 p-3 object-cover"
 				style="border-radius: 18px;"
 			/>
 		</div>
@@ -178,7 +177,7 @@
 	</div>
 {/if}
 {#if cardType == CardType.Video}
-	<div class={cardClass} style="border-radius: 30px; background-color: {primaryColor};">
+	<div class="{cardClass} max-w-2xl mx-auto" style="border-radius: 30px; background-color: {primaryColor};">
 		<div class="relative">
 			<img
 				src={thumbnail
@@ -187,7 +186,7 @@
 						: thumbnail
 					: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 				alt=""
-				class="w-full h-72"
+				class="w-full h-72 object-cover"
 				style="border-top-right-radius: 30px;border-top-left-radius: 30px;"
 			/>
 			<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
