@@ -116,13 +116,21 @@
 					style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 				>
 					<h1 class="text-start font-bold text-xl w-full">
-						{title.toUpperCase()}
+						{#if title?.length > 20}
+							{title?.slice(0, 20).toUpperCase()}...
+						{:else}
+							{title?.toUpperCase()}
+						{/if}
 					</h1>
 				</div>
 
 				<div class="px-6 text-base">
 					<p style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}>
-						{short_description?.slice(0, 80)}
+						{#if short_description?.length > 80}
+							{short_description?.slice(0, 80)}...
+						{:else}
+							{short_description}
+						{/if}
 					</p>
 				</div>
 			</div>
@@ -139,7 +147,10 @@
 {/if}
 
 {#if cardType == CardType.Square}
-	<div class="{cardClass} max-w-2xl mx-auto" style="border-radius: 12px; background-color: {primaryColor};">
+	<div
+		class="{cardClass} max-w-2xl mx-auto"
+		style="border-radius: 12px; background-color: {primaryColor};"
+	>
 		<div class="relative">
 			<img
 				src={thumbnail
@@ -161,7 +172,11 @@
 				style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 			>
 				<h1 class="text-start font-bold text-xl w-full">
-					{title}
+					{#if title?.length > 20}
+						{title?.slice(0, 20)}...
+					{:else}
+						{title}
+					{/if}
 				</h1>
 			</div>
 
@@ -177,7 +192,10 @@
 	</div>
 {/if}
 {#if cardType == CardType.Video}
-	<div class="{cardClass} max-w-2xl mx-auto" style="border-radius: 30px; background-color: {primaryColor};">
+	<div
+		class="{cardClass} max-w-2xl mx-auto"
+		style="border-radius: 30px; background-color: {primaryColor};"
+	>
 		<div class="relative">
 			<img
 				src={thumbnail
@@ -211,7 +229,11 @@
 				style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 			>
 				<h1 class="text-center font-bold text-xl w-full">
-					{title}
+					{#if title?.length > 20}
+						{title?.slice(0, 20)}...
+					{:else}
+						{title}
+					{/if}
 				</h1>
 			</div>
 		</div>
