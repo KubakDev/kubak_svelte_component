@@ -26,17 +26,17 @@
 		' w-full '
 	);
 
-	function getDate() {
-		let dateText = '';
-		if (startDate && endDate) {
-			dateText = `${moment(startDate).format('DD MMM YYYY')} - ${moment(endDate).format(
-				'DD MMM YYYY'
-			)}`;
-		} else {
-			dateText = `${moment(date).format('DD MMM YYYY')}`;
-		}
-		return dateText;
-	}
+	// function getDate() {
+	// 	let dateText = '';
+	// 	if (startDate && endDate) {
+	// 		dateText = `${moment(startDate).format('DD MMM YYYY')} - ${moment(endDate).format(
+	// 			'DD MMM YYYY'
+	// 		)}`;
+	// 	} else {
+	// 		dateText = `${moment(date).format('DD MMM YYYY')}`;
+	// 	}
+	// 	return dateText;
+	// }
 </script>
 
 {#if cardType == CardType.Main}
@@ -76,7 +76,11 @@
 						style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 						class="text-base"
 					>
-						{moment(date).format('DD MMM YYYY')}
+						{#if startDate && endDate}
+							{moment(startDate).format('DD MMM YYYY')} - {moment(endDate).format('DD MMM YYYY')}
+						{:else}
+							{moment(date).format('DD MMM YYYY')}
+						{/if}
 					</div>
 				</div>
 			</div>
@@ -139,7 +143,11 @@
 					style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 					class="text-xs"
 				>
-					{getDate()}
+					{#if startDate && endDate}
+						{moment(startDate).format('DD MMM YYYY')} - {moment(endDate).format('DD MMM YYYY')}
+					{:else}
+						{moment(date).format('DD MMM YYYY')}
+					{/if}
 				</div>
 			</div>
 		</div>
@@ -185,7 +193,11 @@
 					style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 					class="text-xs"
 				>
-					{getDate()}
+					{#if startDate && endDate}
+						{moment(startDate).format('DD MMM YYYY')} - {moment(endDate).format('DD MMM YYYY')}
+					{:else}
+						{moment(date).format('DD MMM YYYY')}
+					{/if}
 				</div>
 			</div>
 		</div>
