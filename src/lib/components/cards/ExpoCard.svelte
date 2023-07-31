@@ -1,24 +1,25 @@
-<script>
+<script lang="ts">
 	import { CardType } from '../../models/cardType';
 	import { ImgSourceEnum } from '../../models/imgSourceEnum';
 	import moment from 'moment';
 	import classNames from 'classnames';
-	export let cardType = CardType;
-	export let title = undefined;
-	export let img = undefined;
-	export let thumbnail = undefined;
-	export let short_description = undefined;
-	export let imgSource = undefined;
-	export let overlayPrimaryColor = undefined;
-	export let overlaySecondaryColor = undefined;
-	export let primaryColor = undefined;
-	export let secondaryColor = undefined;
-	export let backgroundColor = undefined;
-	export let overlayBackgroundColor = undefined;
-	export let startDate = undefined;
-	export let endDate = undefined;
-	export let date = undefined;
-	export let imageClass = undefined;
+	export let cardType: any = CardType;
+	export let title: string | undefined = undefined;
+	export let img: string | undefined = undefined;
+	export let thumbnail: string | undefined = undefined;
+	export let short_description: string | undefined = undefined;
+	export let imgSource: string | undefined = undefined;
+	export let overlayPrimaryColor: string | undefined = undefined;
+	export let overlaySecondaryColor: string | undefined = undefined;
+	export let primaryColor: string | undefined = undefined;
+	export let secondaryColor: string | undefined = undefined;
+	export let backgroundColor: string | undefined = undefined;
+	export let overlayBackgroundColor: string | undefined = undefined;
+	export let startDate: Date | undefined = undefined;
+	export let endDate: Date | undefined = undefined;
+	export let date: Date | undefined = undefined;
+	export let imageClass: string | undefined = undefined;
+	export let to_text: string | undefined = undefined;
 	//rovar
 	$: cardClass = classNames(
 		' w-full cursor-pointer shadow-xl relative ',
@@ -65,13 +66,13 @@
 				style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 			>
 				<h1 class="text-start font-bold text-base w-full">
-					{#if title?.length > 20}
-						{title?.slice(0, 20)}...
+					{#if title !== undefined && title?.length > 37}
+						{title?.slice(0, 37)}...
 					{:else}
 						{title}
 					{/if}
 				</h1>
-				<div class="w-full flex justify-end">
+				<div class="w-full flex justify-end" dir="ltr">
 					<div
 						style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 						class="text-base"
@@ -87,7 +88,7 @@
 
 			<div class="px-6 text-base">
 				<p style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}>
-					{#if short_description?.length > 80}
+					{#if short_description !== undefined && short_description?.length > 80}
 						{short_description?.slice(0, 80)}...
 					{:else}
 						{short_description}
@@ -119,18 +120,18 @@
 						: ' h-full text-center'}  "
 					style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 				>
-					<h1 class="text-start font-bold text-xl w-full">
-						{#if title?.length > 20}
-							{title?.slice(0, 20).toUpperCase()}...
+					<h1 class="text-start font-bold text-base w-full">
+						{#if title !== undefined && title?.length > 37}
+							{title?.slice(0, 37).toUpperCase()}...
 						{:else}
 							{title?.toUpperCase()}
 						{/if}
 					</h1>
 				</div>
 
-				<div class="px-6 text-base">
+				<div class="px-6 text-sm">
 					<p style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}>
-						{#if short_description?.length > 80}
+						{#if short_description !== undefined && short_description?.length > 80}
 							{short_description?.slice(0, 80)}...
 						{:else}
 							{short_description}
@@ -138,13 +139,20 @@
 					</p>
 				</div>
 			</div>
-			<div class="w-full flex justify-end pb-3 px-3">
+			<div class="w-full flex justify-end pb-3 px-3" dir="ltr">
 				<div
 					style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
-					class="text-xs"
+					class="text-sm"
 				>
 					{#if startDate && endDate}
-						{moment(startDate).format('DD MMM YYYY')} - {moment(endDate).format('DD MMM YYYY')}
+						<span class="font-bold">
+							{moment(startDate).format('DD MMMM')}
+						</span>
+						-
+						<span class="font-bold">
+							{moment(endDate).format('DD MMMM')},
+							{moment(endDate).format('YYYY')}
+						</span>
 					{:else}
 						{moment(date).format('DD MMM YYYY')}
 					{/if}
@@ -167,12 +175,12 @@
 						: thumbnail
 					: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 				alt=""
-				class="w-full h-72 p-3 object-cover"
+				class="w-full h-80 p-3 object-cover"
 				style="border-radius: 18px;"
 			/>
 		</div>
 
-		<div class="h-20 overflow-hidden flex flex-col items-center">
+		<!-- <div class="h-20 overflow-hidden flex flex-col items-center">
 			<div
 				class=" flex justify-between items-center py-3 {cardType !== CardType.Video
 					? ''
@@ -180,7 +188,7 @@
 				style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 			>
 				<h1 class="text-start font-bold text-xl w-full">
-					{#if title?.length > 20}
+					{#if title !== undefined && title?.length > 20}
 						{title?.slice(0, 20)}...
 					{:else}
 						{title}
@@ -195,6 +203,43 @@
 				>
 					{#if startDate && endDate}
 						{moment(startDate).format('DD MMM YYYY')} - {moment(endDate).format('DD MMM YYYY')}
+					{:else}
+						{moment(date).format('DD MMM YYYY')}
+					{/if}
+				</div>
+			</div>
+		</div> -->
+
+		<div class="h-20 overflow-hidden flex flex-col items-center">
+			<div
+				class=" flex justify-between items-center py-3 {cardType !== CardType.Video
+					? ''
+					: ' h-full text-center'}  "
+				style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
+			>
+				<h1 class="text-start font-bold text-xl w-full">
+					{#if title !== undefined && title?.length > 37}
+						{title?.slice(0, 37)}...
+					{:else}
+						{title}
+					{/if}
+				</h1>
+			</div>
+
+			<div class="pb-3" dir="ltr">
+				<div
+					style={`color: ${overlayPrimaryColor ?? 'var(--primaryColor)'}`}
+					class="text-sm opacity-80"
+				>
+					{#if startDate && endDate}
+						<span class="font-bold">
+							{moment(startDate).format('DD MMMM')}
+						</span>
+						-
+						<span class="font-bold">
+							{moment(endDate).format('DD MMMM')},
+							{moment(endDate).format('YYYY')}
+						</span>
 					{:else}
 						{moment(date).format('DD MMM YYYY')}
 					{/if}
@@ -241,8 +286,8 @@
 				style={`color: ${overlayPrimaryColor ?? 'var(--overlayPrimaryColor)'}`}
 			>
 				<h1 class="text-center font-bold text-xl w-full">
-					{#if title?.length > 20}
-						{title?.slice(0, 20)}...
+					{#if title !== undefined && title?.length > 37}
+						{title?.slice(0, 37)}...
 					{:else}
 						{title}
 					{/if}
