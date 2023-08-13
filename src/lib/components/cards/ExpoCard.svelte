@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { CardType } from '../../models/cardType';
 	import { ImgSourceEnum } from '../../models/imgSourceEnum';
+	import { Shadow } from 'svelte-loading-spinners';
 	import moment from 'moment';
 	import classNames from 'classnames';
 	export let cardType: any = CardType;
@@ -46,7 +47,9 @@
 		style="border-radius: 30px;background-color: {primaryColor};"
 	>
 		<div class="relative">
+			{#if thumbnail}
 			<img
+			data-sveltekit-preload-code
 				src={thumbnail
 					? imgSource === ImgSourceEnum.remote
 						? `${thumbnail}`
@@ -56,6 +59,9 @@
 				class="h-72 w-full object-cover"
 				style="border-top-right-radius: 30px;border-top-left-radius: 30px;"
 			/>
+			{:else}
+			<Shadow size="60" color="#E1B168" unit="px" duration="1s" />
+			{/if}
 		</div>
 
 		<div class="h-40 overflow-hidden flex flex-col">
@@ -78,7 +84,14 @@
 						class="text-base"
 					>
 						{#if startDate && endDate}
-							{moment(startDate).format('DD MMM YYYY')} - {moment(endDate).format('DD MMM YYYY')}
+							<span class="font-bold">
+								{moment(startDate).format('DD MMMM')}
+							</span>
+							-
+							<span class="font-bold">
+								{moment(endDate).format('DD MMMM')},
+								{moment(endDate).format('YYYY')}
+							</span>
 						{:else}
 							{moment(date).format('DD MMM YYYY')}
 						{/if}
@@ -101,7 +114,9 @@
 {#if cardType == CardType.Flat}
 	<div class="{cardClass} max-w-2xl mx-auto" style="background-color: {primaryColor};">
 		<div class="relative">
+			{#if thumbnail}
 			<img
+			data-sveltekit-preload-code
 				src={thumbnail
 					? imgSource === ImgSourceEnum.remote
 						? `${thumbnail}`
@@ -110,6 +125,9 @@
 				alt=""
 				class="w-full h-72 object-cover"
 			/>
+			{:else}
+			<Shadow size="60" color="#E1B168" unit="px" duration="1s" />
+			{/if}
 		</div>
 
 		<div class="h-40 overflow-hidden flex flex-col justify-between">
@@ -168,7 +186,9 @@
 		style="border-radius: 12px; background-color: {primaryColor};"
 	>
 		<div class="relative">
+			{#if thumbnail}
 			<img
+			data-sveltekit-preload-code
 				src={thumbnail
 					? imgSource === ImgSourceEnum.remote
 						? `${thumbnail}`
@@ -178,6 +198,9 @@
 				class="w-full h-80 p-3 object-cover"
 				style="border-radius: 18px;"
 			/>
+			{:else}
+			<Shadow size="60" color="#E1B168" unit="px" duration="1s" />
+			{/if}
 		</div>
 
 		<!-- <div class="h-20 overflow-hidden flex flex-col items-center">
@@ -254,7 +277,9 @@
 		style="border-radius: 30px; background-color: {primaryColor};"
 	>
 		<div class="relative">
+			{#if thumbnail}
 			<img
+			data-sveltekit-preload-code
 				src={thumbnail
 					? imgSource === ImgSourceEnum.remote
 						? `${thumbnail}`
@@ -264,6 +289,9 @@
 				class="w-full h-72 object-cover"
 				style="border-top-right-radius: 30px;border-top-left-radius: 30px;"
 			/>
+			{:else}
+			<Shadow size="60" color="#E1B168" unit="px" duration="1s" />
+			{/if}
 			<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
