@@ -56,7 +56,7 @@
 						: thumbnail
 					: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 				alt=""
-				class="h-72 w-full object-cover"
+				class="w-full h-72 object-cover"
 				style="border-top-right-radius: 30px;border-top-left-radius: 30px;"
 			/>
 			{:else}
@@ -195,7 +195,7 @@
 						: thumbnail
 					: 'https://images.hindustantimes.com/img/2022/08/07/1600x900/cat_1659882617172_1659882628989_1659882628989.jpg'}
 				alt=""
-				class="w-full h-80 p-3 object-cover"
+				class="w-full h-72 p-3"
 				style="border-radius: 18px;"
 			/>
 			{:else}
