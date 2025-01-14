@@ -7,6 +7,8 @@ declare const __propDef: {
         [evt: string]: CustomEvent<any>;
     };
     slots: {};
+    exports?: {} | undefined;
+    bindings?: string | undefined;
 };
 export type DefaultSectionHeaderProps = typeof __propDef.props;
 export type DefaultSectionHeaderEvents = typeof __propDef.events;

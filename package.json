@@ -1,6 +1,9 @@
 {
 	"name": "kubak-svelte-component",
-	"version": "v0.2.5.0",
+	"author": "KubakDev",
+	"description": "Kubak Svelte Component",
+	"license": "MIT",
+	"version": "v0.2.6.0",
 	"scripts": {
 		"dev": "vite dev --port 5175",
 		"build": "vite build && npm run package",
@@ -15,14 +18,24 @@
 	"files": [
 		"dist"
 	],
+	"keywords": [
+		"svelte",
+		"components",
+		"ui"
+	],
 	"peerDependencies": {
 		"@sveltejs/kit": "^1.30.4",
 		"svelte": "^4.2.19"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/KubakDev/kubak_svelte_component.git"
 	},
 	"devDependencies": {
 		"@popperjs/core": "^2.11.8",
 		"@sveltejs/adapter-auto": "^2.1.1",
 		"@sveltejs/package": "^2.3.7",
+		"@tsconfig/svelte": "^5.0.4",
 		"@typescript-eslint/eslint-plugin": "^8.20.0",
 		"@typescript-eslint/parser": "^8.20.0",
 		"autoprefixer": "^10.4.20",
@@ -43,7 +56,7 @@
 		"svelte-check": "^3.8.6",
 		"svelte-loading-spinners": "^0.3.6",
 		"svelte-preprocess": "^5.1.4",
-		"svelte-youtube-embed": "^0.2.9",
+		"svelte-youtube-embed": "^0.1.20",
 		"tailwindcss": "^3.4.17",
 		"tslib": "^2.8.1",
 		"typescript": "^5.7.3",

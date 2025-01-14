@@ -1,18 +1,18 @@
 import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
-        showIndicators?: boolean | undefined;
-        showCaptions?: boolean | undefined;
-        showThumbs?: boolean | undefined;
+        showIndicators?: boolean;
+        showCaptions?: boolean;
+        showThumbs?: boolean;
         images: any[];
-        slideControls?: boolean | undefined;
-        loop?: boolean | undefined;
-        duration?: number | undefined;
-        divClass?: string | undefined;
-        indicatorDivClass?: string | undefined;
-        captionClass?: string | undefined;
-        indicatorClass?: string | undefined;
-        slideClass?: string | undefined;
+        slideControls?: boolean;
+        loop?: boolean;
+        duration?: number;
+        divClass?: string;
+        indicatorDivClass?: string;
+        captionClass?: string;
+        indicatorClass?: string;
+        slideClass?: string;
     };
     events: {
         [evt: string]: CustomEvent<any>;
@@ -21,6 +21,8 @@ declare const __propDef: {
         previous: {};
         next: {};
     };
+    exports?: {} | undefined;
+    bindings?: string | undefined;
 };
 export type CarouselProps = typeof __propDef.props;
 export type CarouselEvents = typeof __propDef.events;

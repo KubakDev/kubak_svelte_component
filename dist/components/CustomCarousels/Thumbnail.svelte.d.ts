@@ -1,12 +1,12 @@
 import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
-        thumbImg?: string | undefined;
-        altTag?: string | undefined;
-        titleLink?: string | undefined;
+        thumbImg?: string;
+        altTag?: string;
+        titleLink?: string;
         id: number;
         thumbWidth: number;
-        selected?: boolean | undefined;
+        selected?: boolean;
     };
     events: {
         click: MouseEvent;
@@ -14,6 +14,8 @@ declare const __propDef: {
         [evt: string]: CustomEvent<any>;
     };
     slots: {};
+    exports?: {} | undefined;
+    bindings?: string | undefined;
 };
 export type ThumbnailProps = typeof __propDef.props;
 export type ThumbnailEvents = typeof __propDef.events;

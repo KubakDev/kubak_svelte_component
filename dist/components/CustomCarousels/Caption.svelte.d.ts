@@ -1,13 +1,15 @@
 import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
-        caption?: string | undefined;
-        captionClass?: string | undefined;
+        caption?: string;
+        captionClass?: string;
     };
     events: {
         [evt: string]: CustomEvent<any>;
     };
     slots: {};
+    exports?: {} | undefined;
+    bindings?: string | undefined;
 };
 export type CaptionProps = typeof __propDef.props;
 export type CaptionEvents = typeof __propDef.events;

@@ -21,4 +21,5 @@ export let selected = false;
 <style>
 	.active {
 		opacity: 1;
-	}</style>
+	}
+</style>

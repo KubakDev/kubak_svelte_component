@@ -38,6 +38,6 @@ export let customClass = undefined;
 	#default-carousel img {
 		width: 100% !important;
 		height: 100% !important;
-		-o-object-fit: cover !important;
-		   object-fit: cover !important;
-	}</style>
+		object-fit: cover !important;
+	}
+</style>

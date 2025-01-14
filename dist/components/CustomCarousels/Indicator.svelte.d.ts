@@ -1,9 +1,9 @@
 import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
-        name?: string | undefined;
-        selected?: boolean | undefined;
-        indicatorClass?: string | undefined;
+        name?: string;
+        selected?: boolean;
+        indicatorClass?: string;
     };
     events: {
         click: MouseEvent;
@@ -11,6 +11,8 @@ declare const __propDef: {
         [evt: string]: CustomEvent<any>;
     };
     slots: {};
+    exports?: {} | undefined;
+    bindings?: string | undefined;
 };
 export type IndicatorProps = typeof __propDef.props;
 export type IndicatorEvents = typeof __propDef.events;

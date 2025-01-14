@@ -23,6 +23,8 @@ declare const __propDef: {
         [evt: string]: CustomEvent<any>;
     };
     slots: {};
+    exports?: {} | undefined;
+    bindings?: string | undefined;
 };
 export type ExpoCardProps = typeof __propDef.props;
 export type ExpoCardEvents = typeof __propDef.events;

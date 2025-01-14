@@ -1,15 +1,17 @@
 import { SvelteComponent } from "svelte";
 declare const __propDef: {
     props: {
-        image?: string | undefined;
-        altTag?: string | undefined;
-        attr?: string | undefined;
-        slideClass?: string | undefined;
+        image?: string;
+        altTag?: string;
+        attr?: string;
+        slideClass?: string;
     };
     events: {
         [evt: string]: CustomEvent<any>;
     };
     slots: {};
+    exports?: {} | undefined;
+    bindings?: string | undefined;
 };
 export type SlideProps = typeof __propDef.props;
 export type SlideEvents = typeof __propDef.events;

@@ -8,4 +8,5 @@ export let indicatorClass = '';
 <style>
   .active {
     opacity: 1;
-  }</style>
+  }
+</style>
