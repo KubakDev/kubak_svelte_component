@@ -3,7 +3,7 @@
 	"author": "KubakDev",
 	"description": "Kubak Svelte Component",
 	"license": "MIT",
-	"version": "v0.2.6.0",
+	"version": "0.2.6",
 	"scripts": {
 		"dev": "vite dev --port 5175",
 		"build": "vite build && npm run package",
